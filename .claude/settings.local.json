@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm view:*)",
+      "Bash(node -e \"const d=require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\); const v=JSON.parse\\(d\\); const latest14=v.filter\\(x=>x.startsWith\\(''''14.''''\\)\\).slice\\(-5\\); const latest15=v.filter\\(x=>x.startsWith\\(''''15.''''\\)\\).slice\\(-5\\); console.log\\(''''Latest 14.x:'''', latest14\\); console.log\\(''''Latest 15.x:'''', latest15\\);\")",
+      "Bash(npm audit:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

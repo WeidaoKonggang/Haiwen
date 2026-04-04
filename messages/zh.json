@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "home": "首页",
+    "chat": "智能问答",
+    "cases": "案例库",
+    "login": "登录",
+    "register": "注册",
+    "logout": "退出登录"
+  },
+  "home": {
+    "hero": {
+      "badge": "面向中国AI企业出海与ESG创新",
+      "title": "海问 HQ",
+      "subtitle": "AI出海与ESG创新的自助决策咨询平台",
+      "description": "专业的AI驱动咨询服务，帮助中国AI企业制定出海战略、实现ESG合规与可持续发展",
+      "startChat": "开始咨询",
+      "viewCases": "查看案例"
+    },
+    "features": {
+      "title": "核心功能",
+      "subtitle": "为AI出海企业提供全方位决策支持",
+      "ai": {
+        "title": "智能问答咨询",
+        "desc": "基于DeepSeek大模型，提供专业的AI出海策略、合规咨询和ESG创新建议，随时响应"
+      },
+      "cases": {
+        "title": "真实案例库",
+        "desc": "收录中国AI企业出海典型案例，涵盖多个行业和地区的成功实践与失败教训"
+      },
+      "esg": {
+        "title": "ESG合规指导",
+        "desc": "帮助企业了解全球ESG标准与监管要求，制定可持续发展战略，提升国际竞争力"
+      }
+    },
+    "stats": {
+      "cases": "收录案例",
+      "countries": "覆盖国家",
+      "industries": "涉及行业",
+      "users": "企业用户"
+    },
+    "cta": {
+      "title": "准备好开始您的AI出海之旅了吗？",
+      "subtitle": "注册免费账号，立即使用智能咨询功能",
+      "button": "免费注册"
+    }
+  },
+  "chat": {
+    "title": "智能问答",
+    "subtitle": "AI出海与ESG专业顾问",
+    "placeholder": "输入您的问题，例如：如何制定AI产品进入东南亚市场的策略？",
+    "send": "发送",
+    "newChat": "新对话",
+    "history": "历史记录",
+    "loginRequired": "请先登录以使用智能问答功能",
+    "loginBtn": "立即登录",
+    "welcome": "您好！我是海问HQ，您的AI出海与ESG创新专业顾问。",
+    "welcomeDesc": "我可以帮助您：\n• 制定AI产品出海策略与市场进入路径\n• 分析目标市场法规、合规要求与风险\n• 设计ESG可持续发展方案\n• 解读国际市场竞争格局与机遇",
+    "suggestion1": "如何让我的AI产品进入欧洲市场？",
+    "suggestion2": "东南亚AI市场的ESG要求有哪些？",
+    "suggestion3": "如何应对海外数据隐私法规（GDPR等）？",
+    "suggestion4": "中国AI企业出海常见的失败原因是什么？",
+    "thinking": "正在思考...",
+    "error": "回复失败，请检查网络连接后重试",
+    "noKey": "AI服务暂未配置，请联系管理员",
+    "you": "您",
+    "ai": "海问 HQ"
+  },
+  "cases": {
+    "title": "案例库",
+    "subtitle": "中国AI企业出海实践案例",
+    "search": "搜索企业名称或关键词...",
+    "all": "全部",
+    "filterRegion": "按地区筛选",
+    "filterIndustry": "按行业筛选",
+    "noResults": "未找到匹配的案例",
+    "esgBadge": "ESG",
+    "viewDetail": "查看详情",
+    "challenge": "核心挑战",
+    "solution": "AI解决方案",
+    "esgImpact": "ESG影响"
+  },
+  "auth": {
+    "loginTitle": "欢迎回来",
+    "loginSubtitle": "登录您的海问账号",
+    "registerTitle": "创建账号",
+    "registerSubtitle": "加入海问，开启AI出海咨询之旅",
+    "email": "邮箱地址",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "loginBtn": "登录",
+    "registerBtn": "注册",
+    "loggingIn": "登录中...",
+    "registering": "注册中...",
+    "noAccount": "还没有账号？",
+    "hasAccount": "已有账号？",
+    "toRegister": "立即注册",
+    "toLogin": "立即登录",
+    "registerSuccess": "注册成功！请查收验证邮件后登录。",
+    "passwordMismatch": "两次密码不一致",
+    "passwordTooShort": "密码至少需要6位"
+  },
+  "footer": {
+    "desc": "海问HQ — 中国AI企业出海与ESG创新的专业决策咨询平台",
+    "copyright": "© 2024 海问 HQ. 保留所有权利。"
+  }
+}

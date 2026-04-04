@@ -1,0 +1,106 @@
+{
+  "nav": {
+    "home": "Home",
+    "chat": "AI Chat",
+    "cases": "Cases",
+    "login": "Log In",
+    "register": "Sign Up",
+    "logout": "Log Out"
+  },
+  "home": {
+    "hero": {
+      "badge": "For Chinese AI Companies Going Global & ESG Innovation",
+      "title": "HQ — HaiWen",
+      "subtitle": "Self-Service Decision Consulting for AI Globalization & ESG",
+      "description": "Professional AI-powered consulting to help Chinese AI companies develop go-global strategies and achieve ESG compliance",
+      "startChat": "Start Consulting",
+      "viewCases": "View Cases"
+    },
+    "features": {
+      "title": "Core Features",
+      "subtitle": "Comprehensive decision support for AI companies expanding globally",
+      "ai": {
+        "title": "AI Consulting Chat",
+        "desc": "Powered by DeepSeek LLM, providing expert go-global strategies, compliance consulting, and ESG innovation advice"
+      },
+      "cases": {
+        "title": "Real Case Library",
+        "desc": "Curated cases of Chinese AI companies going global, covering successes and lessons learned across industries and regions"
+      },
+      "esg": {
+        "title": "ESG Compliance Guide",
+        "desc": "Understand global ESG standards and regulatory requirements, develop sustainable strategies to enhance international competitiveness"
+      }
+    },
+    "stats": {
+      "cases": "Cases",
+      "countries": "Countries",
+      "industries": "Industries",
+      "users": "Enterprise Users"
+    },
+    "cta": {
+      "title": "Ready to Start Your AI Globalization Journey?",
+      "subtitle": "Sign up for free and start using AI consulting right now",
+      "button": "Sign Up Free"
+    }
+  },
+  "chat": {
+    "title": "AI Consulting",
+    "subtitle": "AI Globalization & ESG Expert",
+    "placeholder": "Ask your question, e.g., How do I enter the Southeast Asian market with my AI product?",
+    "send": "Send",
+    "newChat": "New Chat",
+    "history": "History",
+    "loginRequired": "Please log in to use the AI consulting feature",
+    "loginBtn": "Log In Now",
+    "welcome": "Hello! I'm HQ (HaiWen), your professional consultant for AI globalization and ESG innovation.",
+    "welcomeDesc": "I can help you:\n• Develop go-global strategies and market entry paths\n• Analyze target market regulations, compliance, and risks\n• Design ESG sustainability plans\n• Understand international competitive landscape and opportunities",
+    "suggestion1": "How can I enter the European market with my AI product?",
+    "suggestion2": "What are ESG requirements in Southeast Asian AI markets?",
+    "suggestion3": "How to handle overseas data privacy regulations (GDPR, etc.)?",
+    "suggestion4": "What are common failure reasons for Chinese AI companies going global?",
+    "thinking": "Thinking...",
+    "error": "Failed to get response. Please check your connection and retry.",
+    "noKey": "AI service not configured. Please contact the administrator.",
+    "you": "You",
+    "ai": "HQ"
+  },
+  "cases": {
+    "title": "Case Library",
+    "subtitle": "Chinese AI Companies Going Global",
+    "search": "Search company name or keyword...",
+    "all": "All",
+    "filterRegion": "Filter by Region",
+    "filterIndustry": "Filter by Industry",
+    "noResults": "No matching cases found",
+    "esgBadge": "ESG",
+    "viewDetail": "View Details",
+    "challenge": "Key Challenge",
+    "solution": "AI Solution",
+    "esgImpact": "ESG Impact"
+  },
+  "auth": {
+    "loginTitle": "Welcome Back",
+    "loginSubtitle": "Sign in to your HQ account",
+    "registerTitle": "Create Account",
+    "registerSubtitle": "Join HQ, start your AI globalization consulting journey",
+    "email": "Email Address",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "loginBtn": "Log In",
+    "registerBtn": "Sign Up",
+    "loggingIn": "Logging in...",
+    "registering": "Signing up...",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "toRegister": "Sign Up",
+    "toLogin": "Log In",
+    "registerSuccess": "Registration successful! Please check your email to verify your account.",
+    "passwordMismatch": "Passwords do not match",
+    "passwordTooShort": "Password must be at least 6 characters"
+  },
+  "footer": {
+    "desc": "HQ HaiWen — Professional decision consulting for Chinese AI companies going global and ESG innovation",
+    "copyright": "© 2024 HQ HaiWen. All rights reserved."
+  }
+}

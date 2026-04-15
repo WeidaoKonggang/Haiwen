@@ -205,10 +205,10 @@ export default function ChatInterface({ locale }: Props) {
                 )}
 
                 <div
-                  className={`max-w-[75%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
+                  className={`max-w-[75%] rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap ${
                     msg.role === 'user'
                       ? 'bg-blue-600 text-white rounded-tr-sm'
-                      : 'bg-gray-100 text-gray-800 rounded-tl-sm prose-chat'
+                      : 'bg-gray-100 text-gray-800 rounded-tl-sm'
                   }`}
                 >
                   {msg.content || (

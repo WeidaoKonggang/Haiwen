@@ -19,7 +19,7 @@ export default function Navbar({ locale, user }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   const isActive = (path: string) =>
-    pathname === `/${locale}${path}` || pathname.startsWith(`/${locale}${path}/`)
+    pathname === `/${locale}${path}` || (path !== '' && pathname.startsWith(`/${locale}${path}/`))
 
   const handleLogout = async () => {
     try {
@@ -32,15 +32,26 @@ export default function Navbar({ locale, user }: NavbarProps) {
     }
   }
 
-  const navLinks = [
+  // Nav links differ for guest vs logged-in users
+  const guestLinks = [
     { href: '', label: t('home') },
-    { href: '/chat', label: t('chat') },
+    { href: '/policy-db', label: t('policyDb') },
+    { href: '/cases', label: t('cases') },
+    { href: '/expert-hall', label: t('expertHall') },
+  ]
+
+  const userLinks = [
+    { href: '/dashboard', label: t('dashboard') },
+    { href: '/ai-chat', label: t('chat') },
+    { href: '/policy-db', label: t('policyDb') },
     { href: '/cases', label: t('cases') },
   ]
 
+  const navLinks = user ? userLinks : guestLinks
+
   return (
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center gap-2.5 shrink-0">
@@ -48,13 +59,13 @@ export default function Navbar({ locale, user }: NavbarProps) {
               <span className="text-white font-bold text-sm">HQ</span>
             </div>
             <span className="font-bold text-gray-900 text-base">海问</span>
-            <span className="hidden sm:inline text-xs text-gray-400 font-normal border-l border-gray-200 pl-2.5 ml-0.5">
-              AI出海·ESG咨询
+            <span className="hidden sm:inline text-xs text-gray-400 font-normal border-l border-gray-200 pl-2.5">
+              AI出海·ESG决策
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -76,12 +87,18 @@ export default function Navbar({ locale, user }: NavbarProps) {
 
             {user ? (
               <div className="flex items-center gap-3">
-                <span className="text-xs text-gray-400 max-w-[120px] truncate">
+                <span className="text-xs text-gray-400 max-w-[120px] truncate hidden lg:block">
                   {user.email}
                 </span>
+                <Link
+                  href={`/${locale}/enterprise-center`}
+                  className="text-sm text-gray-600 hover:text-gray-900 font-medium"
+                >
+                  {locale === 'zh' ? '企业中心' : 'Enterprise'}
+                </Link>
                 <button
                   onClick={handleLogout}
-                  className="text-sm text-gray-600 hover:text-gray-900 font-medium"
+                  className="text-sm text-gray-500 hover:text-gray-800 font-medium"
                 >
                   {t('logout')}
                 </button>
@@ -122,20 +139,20 @@ export default function Navbar({ locale, user }: NavbarProps) {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-3">
+        <div className="md:hidden border-t border-gray-100 bg-white px-4 py-4 space-y-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={`/${locale}${link.href}`}
               onClick={() => setMobileOpen(false)}
-              className={`block text-sm font-medium py-2 ${
-                isActive(link.href || '/') ? 'text-blue-600' : 'text-gray-700'
+              className={`block text-sm font-medium py-2.5 px-3 rounded-lg ${
+                isActive(link.href || '/') ? 'text-blue-600 bg-blue-50' : 'text-gray-700 hover:bg-gray-50'
               }`}
             >
               {link.label}
             </Link>
           ))}
-          <div className="pt-2 border-t border-gray-100 flex items-center justify-between">
+          <div className="pt-3 border-t border-gray-100 flex items-center justify-between">
             <LanguageSwitcher locale={locale} />
             {user ? (
               <button onClick={handleLogout} className="text-sm text-gray-600 font-medium">

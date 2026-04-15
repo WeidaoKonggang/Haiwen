@@ -1,64 +1,130 @@
 {
   "nav": {
     "home": "首页",
-    "chat": "智能问答",
+    "chat": "AI问答",
     "cases": "案例库",
+    "policyDb": "政策数据库",
+    "expertHall": "专家大厅",
+    "dashboard": "控制台",
     "login": "登录",
     "register": "注册",
-    "logout": "退出登录"
+    "logout": "退出登录",
+    "console": "进入控制台"
+  },
+  "sidebar": {
+    "workspace": "工作台",
+    "dashboard": "控制台首页",
+    "aiChat": "AI智能问答",
+    "compliance": "合规工具",
+    "policyDb": "政策与ESG数据库",
+    "diagnosis": "合规诊断",
+    "riskAssessment": "风险评估",
+    "globalManagement": "出海管理",
+    "esgManage": "ESG管理",
+    "decisionEngine": "出海决策引擎",
+    "solutionTools": "方案工具集",
+    "dataAnalysis": "数据分析中心",
+    "ecosystem": "资源生态",
+    "caseLibrary": "案例库",
+    "expertHall": "专家大厅",
+    "resourceCenter": "资源对接",
+    "enterprise": "企业管理",
+    "enterpriseCenter": "企业管理中心"
   },
   "home": {
     "hero": {
-      "badge": "面向中国AI企业出海与ESG创新",
+      "badge": "面向中国AI企业 · 出海合规与ESG创新",
       "title": "海问 HQ",
-      "subtitle": "AI出海与ESG创新的自助决策咨询平台",
-      "description": "专业的AI驱动咨询服务，帮助中国AI企业制定出海战略、实现ESG合规与可持续发展",
-      "startChat": "开始咨询",
-      "viewCases": "查看案例"
-    },
-    "features": {
-      "title": "核心功能",
-      "subtitle": "为AI出海企业提供全方位决策支持",
-      "ai": {
-        "title": "智能问答咨询",
-        "desc": "基于DeepSeek大模型，提供专业的AI出海策略、合规咨询和ESG创新建议，随时响应"
-      },
-      "cases": {
-        "title": "真实案例库",
-        "desc": "收录中国AI企业出海典型案例，涵盖多个行业和地区的成功实践与失败教训"
-      },
-      "esg": {
-        "title": "ESG合规指导",
-        "desc": "帮助企业了解全球ESG标准与监管要求，制定可持续发展战略，提升国际竞争力"
-      }
+      "subtitle": "中国AI企业出海与ESG创新自主咨询决策平台",
+      "description": "覆盖全球30+国家政策法规，集AI智能问答、合规诊断、ESG管理、出海决策于一体，助力中国AI企业高效、合规地走向世界",
+      "startChat": "开始AI咨询",
+      "viewCases": "查看案例",
+      "freeTrial": "免费试用"
     },
     "stats": {
-      "cases": "收录案例",
+      "policies": "政策法规",
       "countries": "覆盖国家",
-      "industries": "涉及行业",
-      "users": "企业用户"
+      "cases": "实战案例",
+      "experts": "领域专家"
+    },
+    "modules": {
+      "title": "全方位出海决策支持体系",
+      "subtitle": "十大核心功能模块，覆盖AI企业出海与ESG管理全场景",
+      "aiChat": {
+        "title": "AI智能问答",
+        "desc": "基于垂直领域大模型，支持出海合规、ESG管理、政策解读全场景多轮对话咨询"
+      },
+      "policyDb": {
+        "title": "政策与ESG数据库",
+        "desc": "覆盖全球30+国家AI监管、数据安全、ESG标准的实时权威数据库，支持订阅推送"
+      },
+      "diagnosis": {
+        "title": "合规资质诊断",
+        "desc": "AI自动诊断出海合规缺口，识别备案要求和准入门槛，生成优先级整改清单"
+      },
+      "risk": {
+        "title": "风险智能评估",
+        "desc": "六维度风险模型，7×24小时监控目标市场政策变动，自动触发风险预警"
+      },
+      "esg": {
+        "title": "ESG全流程管理",
+        "desc": "适配AI行业的ESG数据采集、体系规划、报告自动生成与合规审核一体化管理"
+      },
+      "decision": {
+        "title": "出海决策引擎",
+        "desc": "多维度综合评分，智能推荐最优出海目的地，生成完整出海模式与路径决策方案"
+      },
+      "solution": {
+        "title": "方案工具集",
+        "desc": "基于诊断和决策结果，AI自动生成可落地的合规方案与文书，支持团队协作"
+      },
+      "analysis": {
+        "title": "数据可视化分析",
+        "desc": "企业专属驾驶舱，合规进度、风险指数、ESG评分全方位可视化展示与行业对标"
+      },
+      "expert": {
+        "title": "专家咨询服务",
+        "desc": "覆盖出海合规、ESG管理、跨境税务等领域的专业专家团队，在线咨询与预约"
+      },
+      "resource": {
+        "title": "资源对接平台",
+        "desc": "整合海外律所、会计师事务所、ESG机构、跨境服务商等生态资源，精准对接"
+      }
+    },
+    "howItWorks": {
+      "title": "三步完成出海合规决策",
+      "subtitle": "从信息输入到方案落地，全流程AI辅助，让决策更快更准",
+      "step1": { "title": "输入企业信息", "desc": "填报企业基础信息、目标市场、业务类型，平台智能匹配适用的政策法规与ESG标准" },
+      "step2": { "title": "AI智能诊断分析", "desc": "大模型自动完成合规诊断、风险评估、ESG测算，生成详细的分析报告和优化建议" },
+      "step3": { "title": "生成落地方案", "desc": "基于诊断结果，一键生成定制化合规方案、ESG体系搭建计划和出海路径规划" }
+    },
+    "featuredCases": {
+      "title": "精选出海案例",
+      "subtitle": "真实企业出海实践，提炼可复用的方法论与经验",
+      "viewAll": "查看全部案例 →"
     },
     "cta": {
-      "title": "准备好开始您的AI出海之旅了吗？",
-      "subtitle": "注册免费账号，立即使用智能咨询功能",
-      "button": "免费注册"
+      "title": "立即开启AI出海决策之旅",
+      "subtitle": "注册即可免费使用AI智能问答，企业会员解锁全部功能模块",
+      "button": "免费注册体验",
+      "login": "已有账号，立即登录"
     }
   },
   "chat": {
-    "title": "智能问答",
-    "subtitle": "AI出海与ESG专业顾问",
-    "placeholder": "输入您的问题，例如：如何制定AI产品进入东南亚市场的策略？",
+    "title": "AI智能问答",
+    "subtitle": "出海合规与ESG创新专业顾问",
+    "placeholder": "输入您的问题，例如：如何让AI产品进入欧洲市场并满足EU AI Act要求？",
     "send": "发送",
     "newChat": "新对话",
     "history": "历史记录",
     "loginRequired": "请先登录以使用智能问答功能",
     "loginBtn": "立即登录",
     "welcome": "您好！我是海问HQ，您的AI出海与ESG创新专业顾问。",
-    "welcomeDesc": "我可以帮助您：\n• 制定AI产品出海策略与市场进入路径\n• 分析目标市场法规、合规要求与风险\n• 设计ESG可持续发展方案\n• 解读国际市场竞争格局与机遇",
-    "suggestion1": "如何让我的AI产品进入欧洲市场？",
-    "suggestion2": "东南亚AI市场的ESG要求有哪些？",
-    "suggestion3": "如何应对海外数据隐私法规（GDPR等）？",
-    "suggestion4": "中国AI企业出海常见的失败原因是什么？",
+    "welcomeDesc": "我可以帮助您制定AI产品出海策略与市场进入路径，分析目标市场法规合规要求与风险，解读EU AI Act、GDPR等国际监管政策，设计ESG可持续发展方案，以及解析国际市场竞争格局与机遇。",
+    "suggestion1": "EU AI Act对我的AI产品有哪些具体合规要求？",
+    "suggestion2": "东南亚AI市场的ESG披露要求有哪些？",
+    "suggestion3": "中国AI企业进入欧洲市场需要哪些步骤？",
+    "suggestion4": "如何建立符合ISSB标准的ESG数据管理体系？",
     "thinking": "正在思考...",
     "error": "回复失败，请检查网络连接后重试",
     "noKey": "AI服务暂未配置，请联系管理员",
@@ -77,7 +143,134 @@
     "viewDetail": "查看详情",
     "challenge": "核心挑战",
     "solution": "AI解决方案",
-    "esgImpact": "ESG影响"
+    "esgImpact": "ESG影响",
+    "backToList": "返回案例列表",
+    "relatedCases": "相关案例推荐"
+  },
+  "policyDb": {
+    "title": "政策与ESG数据库",
+    "subtitle": "覆盖全球30+国家，实时跟踪AI监管与ESG标准动态",
+    "searchPlaceholder": "搜索政策名称、国家、关键词...",
+    "tabPolicies": "出海政策法规",
+    "tabEsg": "ESG标准体系",
+    "filterCountry": "按国家/地区",
+    "filterType": "按政策类型",
+    "filterRisk": "按风险等级",
+    "allCountries": "全部国家",
+    "allTypes": "全部类型",
+    "allRisks": "全部等级",
+    "riskHigh": "高风险",
+    "riskMedium": "中风险",
+    "riskLow": "低风险",
+    "statusActive": "现行有效",
+    "statusDraft": "草案阶段",
+    "statusExpired": "已失效",
+    "publishDate": "发布日期",
+    "effectiveDate": "生效日期",
+    "publishOrg": "发布机构",
+    "keyPoints": "合规要点",
+    "viewDetail": "查看详情",
+    "subscribe": "订阅更新",
+    "bookmark": "收藏",
+    "download": "下载",
+    "backToList": "返回列表",
+    "relatedPolicies": "相关政策推荐",
+    "noResults": "未找到匹配的政策",
+    "policyCount": "条政策法规",
+    "standardCount": "项ESG标准"
+  },
+  "diagnosis": {
+    "title": "合规资质诊断",
+    "subtitle": "AI智能诊断您的出海合规状态，识别缺口与风险",
+    "newDiagnosis": "发起新诊断",
+    "historyTitle": "历史诊断记录",
+    "noDiagnosis": "暂无诊断记录，点击右上角发起首次诊断",
+    "step1": "企业基本信息",
+    "step2": "目标市场选择",
+    "step3": "业务类型与产品",
+    "step4": "数据合规场景",
+    "generating": "AI诊断中，请稍候...",
+    "viewReport": "查看报告"
+  },
+  "risk": {
+    "title": "风险智能评估",
+    "subtitle": "六维度风险模型，实时监控出海合规与经营风险",
+    "overallRisk": "综合风险指数",
+    "highRisk": "高风险",
+    "mediumRisk": "中风险",
+    "lowRisk": "低风险",
+    "categories": {
+      "policy": "政策合规风险",
+      "data": "数据安全风险",
+      "esg": "ESG违规风险",
+      "geopolitical": "地缘政治风险",
+      "supply": "供应链风险",
+      "market": "市场竞争风险"
+    }
+  },
+  "esg": {
+    "title": "ESG管理",
+    "subtitle": "适配AI行业的ESG全生命周期管理平台",
+    "overallScore": "ESG综合评分",
+    "environmental": "环境（E）",
+    "social": "社会（S）",
+    "governance": "治理（G）",
+    "dataCollect": "数据采集",
+    "reportCreate": "报告生成",
+    "strategyPlan": "体系规划",
+    "performanceTrack": "绩效追踪"
+  },
+  "decision": {
+    "title": "出海决策引擎",
+    "subtitle": "数据驱动的智能出海目的地匹配与路径规划",
+    "destinationMatch": "目的地智能匹配",
+    "modeDecision": "出海模式决策",
+    "roiCalculator": "ROI测算工具",
+    "historyPlans": "历史决策方案"
+  },
+  "solutions": {
+    "title": "方案工具集",
+    "subtitle": "将诊断与决策结果转化为可落地执行方案"
+  },
+  "expertHall": {
+    "title": "专家大厅",
+    "subtitle": "覆盖出海合规、ESG管理、跨境税务等领域的权威专家团队",
+    "filterAll": "全部领域",
+    "consult": "立即咨询",
+    "available": "可预约",
+    "busy": "暂不可约",
+    "experience": "从业",
+    "cases": "服务案例",
+    "rating": "满意度"
+  },
+  "resourceCenter": {
+    "title": "资源对接中心",
+    "subtitle": "精准匹配海外律所、咨询机构、跨境服务商等生态资源",
+    "connect": "申请对接",
+    "verified": "已认证",
+    "services": "服务内容",
+    "regions": "覆盖地区"
+  },
+  "enterprise": {
+    "title": "企业管理中心",
+    "account": "账号与权限",
+    "project": "项目管理",
+    "document": "文档管理",
+    "message": "消息通知",
+    "membership": "会员套餐"
+  },
+  "dashboard": {
+    "title": "控制台",
+    "welcome": "欢迎回来",
+    "complianceScore": "合规评分",
+    "riskIndex": "风险指数",
+    "esgScore": "ESG评分",
+    "activeProjects": "进行中项目",
+    "quickActions": "快捷操作",
+    "recentActivity": "最近动态",
+    "riskAlerts": "风险预警",
+    "policyUpdates": "政策更新",
+    "pendingTasks": "待办事项"
   },
   "auth": {
     "loginTitle": "欢迎回来",
@@ -99,8 +292,29 @@
     "passwordMismatch": "两次密码不一致",
     "passwordTooShort": "密码至少需要6位"
   },
+  "about": {
+    "title": "关于海问",
+    "subtitle": "中国AI企业出海与ESG创新的专业决策咨询平台"
+  },
+  "help": {
+    "title": "帮助中心",
+    "subtitle": "常见问题解答与使用指南",
+    "searchPlaceholder": "搜索问题...",
+    "feedback": "提交反馈"
+  },
   "footer": {
     "desc": "海问HQ — 中国AI企业出海与ESG创新的专业决策咨询平台",
-    "copyright": "© 2024 海问 HQ. 保留所有权利。"
+    "copyright": "© 2024 海问 HQ. 保留所有权利。",
+    "product": "产品功能",
+    "company": "公司信息",
+    "legal": "法律条款",
+    "aiChat": "AI智能问答",
+    "policyDb": "政策数据库",
+    "caseLibrary": "案例库",
+    "expertHall": "专家大厅",
+    "aboutUs": "关于我们",
+    "help": "帮助中心",
+    "privacy": "隐私政策",
+    "terms": "服务协议"
   }
 }

@@ -3,62 +3,128 @@
     "home": "Home",
     "chat": "AI Chat",
     "cases": "Cases",
+    "policyDb": "Policy DB",
+    "expertHall": "Expert Hall",
+    "dashboard": "Dashboard",
     "login": "Log In",
     "register": "Sign Up",
-    "logout": "Log Out"
+    "logout": "Log Out",
+    "console": "Go to Dashboard"
+  },
+  "sidebar": {
+    "workspace": "Workspace",
+    "dashboard": "Dashboard",
+    "aiChat": "AI Consulting",
+    "compliance": "Compliance Tools",
+    "policyDb": "Policy & ESG Database",
+    "diagnosis": "Compliance Diagnosis",
+    "riskAssessment": "Risk Assessment",
+    "globalManagement": "Go-Global Management",
+    "esgManage": "ESG Management",
+    "decisionEngine": "Decision Engine",
+    "solutionTools": "Solution Tools",
+    "dataAnalysis": "Data Analytics",
+    "ecosystem": "Resources & Ecosystem",
+    "caseLibrary": "Case Library",
+    "expertHall": "Expert Hall",
+    "resourceCenter": "Resource Center",
+    "enterprise": "Enterprise",
+    "enterpriseCenter": "Enterprise Center"
   },
   "home": {
     "hero": {
-      "badge": "For Chinese AI Companies Going Global & ESG Innovation",
+      "badge": "For Chinese AI Companies · Global Compliance & ESG Innovation",
       "title": "HQ — HaiWen",
-      "subtitle": "Self-Service Decision Consulting for AI Globalization & ESG",
-      "description": "Professional AI-powered consulting to help Chinese AI companies develop go-global strategies and achieve ESG compliance",
-      "startChat": "Start Consulting",
-      "viewCases": "View Cases"
-    },
-    "features": {
-      "title": "Core Features",
-      "subtitle": "Comprehensive decision support for AI companies expanding globally",
-      "ai": {
-        "title": "AI Consulting Chat",
-        "desc": "Powered by DeepSeek LLM, providing expert go-global strategies, compliance consulting, and ESG innovation advice"
-      },
-      "cases": {
-        "title": "Real Case Library",
-        "desc": "Curated cases of Chinese AI companies going global, covering successes and lessons learned across industries and regions"
-      },
-      "esg": {
-        "title": "ESG Compliance Guide",
-        "desc": "Understand global ESG standards and regulatory requirements, develop sustainable strategies to enhance international competitiveness"
-      }
+      "subtitle": "AI Go-Global & ESG Innovation Decision Platform for Chinese AI Companies",
+      "description": "Covering 30+ countries' regulations, integrating AI consulting, compliance diagnosis, ESG management, and go-global decision-making to help Chinese AI companies expand globally efficiently and compliantly",
+      "startChat": "Start AI Consulting",
+      "viewCases": "View Cases",
+      "freeTrial": "Free Trial"
     },
     "stats": {
-      "cases": "Cases",
+      "policies": "Regulations",
       "countries": "Countries",
-      "industries": "Industries",
-      "users": "Enterprise Users"
+      "cases": "Case Studies",
+      "experts": "Domain Experts"
+    },
+    "modules": {
+      "title": "Comprehensive Go-Global Decision Support System",
+      "subtitle": "Ten core functional modules covering all scenarios of AI company globalization and ESG management",
+      "aiChat": {
+        "title": "AI Consulting Chat",
+        "desc": "Vertical domain LLM supporting multi-turn consultations on go-global compliance, ESG management, and policy interpretation"
+      },
+      "policyDb": {
+        "title": "Policy & ESG Database",
+        "desc": "Real-time authoritative database covering AI regulation, data security, and ESG standards in 30+ countries, with subscription alerts"
+      },
+      "diagnosis": {
+        "title": "Compliance Diagnosis",
+        "desc": "AI auto-diagnoses go-global compliance gaps, identifies filing requirements and access thresholds, generates prioritized remediation plans"
+      },
+      "risk": {
+        "title": "Intelligent Risk Assessment",
+        "desc": "Six-dimensional risk model, 24/7 monitoring of target market policy changes, automatic risk alerts"
+      },
+      "esg": {
+        "title": "Full-Cycle ESG Management",
+        "desc": "AI industry-adapted ESG data collection, system planning, automated report generation, and compliance review"
+      },
+      "decision": {
+        "title": "Go-Global Decision Engine",
+        "desc": "Multi-dimensional scoring, intelligent recommendation of optimal destinations, complete go-global mode and pathway decision plans"
+      },
+      "solution": {
+        "title": "Solution Tools",
+        "desc": "AI auto-generates actionable compliance solutions and documents based on diagnosis and decision results, with team collaboration"
+      },
+      "analysis": {
+        "title": "Data Visualization Analytics",
+        "desc": "Enterprise-exclusive dashboard with comprehensive visualization of compliance progress, risk indices, ESG scores, and industry benchmarks"
+      },
+      "expert": {
+        "title": "Expert Consulting",
+        "desc": "Professional expert team covering go-global compliance, ESG management, and cross-border tax, with online consultation and appointment"
+      },
+      "resource": {
+        "title": "Resource Matching Platform",
+        "desc": "Integrating overseas law firms, accounting firms, ESG agencies, cross-border service providers for precise matching"
+      }
+    },
+    "howItWorks": {
+      "title": "Three Steps to Go-Global Compliance Decision",
+      "subtitle": "From information input to solution delivery, AI-assisted throughout for faster and more accurate decisions",
+      "step1": { "title": "Input Company Information", "desc": "Fill in company basics, target markets, and business type; platform intelligently matches applicable regulations and ESG standards" },
+      "step2": { "title": "AI Intelligent Diagnosis", "desc": "LLM automatically completes compliance diagnosis, risk assessment, and ESG analysis, generating detailed reports and recommendations" },
+      "step3": { "title": "Generate Actionable Solutions", "desc": "Based on diagnosis results, one-click generation of customized compliance plans, ESG system setup, and go-global roadmaps" }
+    },
+    "featuredCases": {
+      "title": "Featured Case Studies",
+      "subtitle": "Real enterprise go-global practices, distilling reusable methodologies and insights",
+      "viewAll": "View All Cases →"
     },
     "cta": {
-      "title": "Ready to Start Your AI Globalization Journey?",
-      "subtitle": "Sign up for free and start using AI consulting right now",
-      "button": "Sign Up Free"
+      "title": "Start Your AI Go-Global Decision Journey",
+      "subtitle": "Register free to use AI consulting; enterprise membership unlocks all modules",
+      "button": "Sign Up Free",
+      "login": "Already have an account? Log In"
     }
   },
   "chat": {
     "title": "AI Consulting",
-    "subtitle": "AI Globalization & ESG Expert",
-    "placeholder": "Ask your question, e.g., How do I enter the Southeast Asian market with my AI product?",
+    "subtitle": "Go-Global Compliance & ESG Expert",
+    "placeholder": "Ask your question, e.g., How can my AI product enter the European market while complying with the EU AI Act?",
     "send": "Send",
     "newChat": "New Chat",
     "history": "History",
     "loginRequired": "Please log in to use the AI consulting feature",
     "loginBtn": "Log In Now",
     "welcome": "Hello! I'm HQ (HaiWen), your professional consultant for AI globalization and ESG innovation.",
-    "welcomeDesc": "I can help you:\n• Develop go-global strategies and market entry paths\n• Analyze target market regulations, compliance, and risks\n• Design ESG sustainability plans\n• Understand international competitive landscape and opportunities",
-    "suggestion1": "How can I enter the European market with my AI product?",
-    "suggestion2": "What are ESG requirements in Southeast Asian AI markets?",
-    "suggestion3": "How to handle overseas data privacy regulations (GDPR, etc.)?",
-    "suggestion4": "What are common failure reasons for Chinese AI companies going global?",
+    "welcomeDesc": "I can help you develop AI product go-global strategies and market entry paths, analyze target market regulatory compliance and risks, interpret EU AI Act, GDPR and other international regulations, design ESG sustainability plans, and understand international competitive landscape and opportunities.",
+    "suggestion1": "What specific compliance requirements does the EU AI Act have for my AI product?",
+    "suggestion2": "What are the ESG disclosure requirements in Southeast Asian AI markets?",
+    "suggestion3": "What steps does a Chinese AI company need to enter the European market?",
+    "suggestion4": "How do I build an ESG data management system compliant with ISSB standards?",
     "thinking": "Thinking...",
     "error": "Failed to get response. Please check your connection and retry.",
     "noKey": "AI service not configured. Please contact the administrator.",
@@ -77,7 +143,134 @@
     "viewDetail": "View Details",
     "challenge": "Key Challenge",
     "solution": "AI Solution",
-    "esgImpact": "ESG Impact"
+    "esgImpact": "ESG Impact",
+    "backToList": "Back to Cases",
+    "relatedCases": "Related Cases"
+  },
+  "policyDb": {
+    "title": "Policy & ESG Database",
+    "subtitle": "Covering 30+ countries, tracking AI regulation and ESG standards in real time",
+    "searchPlaceholder": "Search policy name, country, keyword...",
+    "tabPolicies": "Go-Global Policies",
+    "tabEsg": "ESG Standards",
+    "filterCountry": "By Country",
+    "filterType": "By Policy Type",
+    "filterRisk": "By Risk Level",
+    "allCountries": "All Countries",
+    "allTypes": "All Types",
+    "allRisks": "All Levels",
+    "riskHigh": "High Risk",
+    "riskMedium": "Medium Risk",
+    "riskLow": "Low Risk",
+    "statusActive": "In Effect",
+    "statusDraft": "Draft",
+    "statusExpired": "Expired",
+    "publishDate": "Published",
+    "effectiveDate": "Effective",
+    "publishOrg": "Issuing Authority",
+    "keyPoints": "Key Compliance Points",
+    "viewDetail": "View Details",
+    "subscribe": "Subscribe",
+    "bookmark": "Bookmark",
+    "download": "Download",
+    "backToList": "Back to List",
+    "relatedPolicies": "Related Policies",
+    "noResults": "No matching policies found",
+    "policyCount": "policies",
+    "standardCount": "ESG standards"
+  },
+  "diagnosis": {
+    "title": "Compliance Diagnosis",
+    "subtitle": "AI intelligently diagnoses your go-global compliance status, identifying gaps and risks",
+    "newDiagnosis": "Start New Diagnosis",
+    "historyTitle": "Diagnosis History",
+    "noDiagnosis": "No diagnosis records yet. Click above to start your first diagnosis.",
+    "step1": "Company Information",
+    "step2": "Target Market",
+    "step3": "Business Type & Product",
+    "step4": "Data Compliance Scenarios",
+    "generating": "AI diagnosing, please wait...",
+    "viewReport": "View Report"
+  },
+  "risk": {
+    "title": "Intelligent Risk Assessment",
+    "subtitle": "Six-dimensional risk model, real-time monitoring of go-global compliance and operational risks",
+    "overallRisk": "Overall Risk Index",
+    "highRisk": "High Risk",
+    "mediumRisk": "Medium Risk",
+    "lowRisk": "Low Risk",
+    "categories": {
+      "policy": "Policy Compliance Risk",
+      "data": "Data Security Risk",
+      "esg": "ESG Violation Risk",
+      "geopolitical": "Geopolitical Risk",
+      "supply": "Supply Chain Risk",
+      "market": "Market Competition Risk"
+    }
+  },
+  "esg": {
+    "title": "ESG Management",
+    "subtitle": "Full-cycle ESG management platform adapted for AI industry",
+    "overallScore": "ESG Overall Score",
+    "environmental": "Environmental (E)",
+    "social": "Social (S)",
+    "governance": "Governance (G)",
+    "dataCollect": "Data Collection",
+    "reportCreate": "Report Generation",
+    "strategyPlan": "System Planning",
+    "performanceTrack": "Performance Tracking"
+  },
+  "decision": {
+    "title": "Go-Global Decision Engine",
+    "subtitle": "Data-driven intelligent destination matching and pathway planning",
+    "destinationMatch": "Destination Matching",
+    "modeDecision": "Entry Mode Decision",
+    "roiCalculator": "ROI Calculator",
+    "historyPlans": "Decision History"
+  },
+  "solutions": {
+    "title": "Solution Tools",
+    "subtitle": "Transform diagnosis and decision results into actionable implementation plans"
+  },
+  "expertHall": {
+    "title": "Expert Hall",
+    "subtitle": "Authoritative expert team covering go-global compliance, ESG management, cross-border tax, and more",
+    "filterAll": "All Fields",
+    "consult": "Consult Now",
+    "available": "Available",
+    "busy": "Unavailable",
+    "experience": "Experience",
+    "cases": "Cases Served",
+    "rating": "Satisfaction"
+  },
+  "resourceCenter": {
+    "title": "Resource Center",
+    "subtitle": "Precisely match overseas law firms, consulting firms, cross-border service providers and more",
+    "connect": "Request Connection",
+    "verified": "Verified",
+    "services": "Services",
+    "regions": "Coverage"
+  },
+  "enterprise": {
+    "title": "Enterprise Center",
+    "account": "Accounts & Permissions",
+    "project": "Project Management",
+    "document": "Document Management",
+    "message": "Notifications",
+    "membership": "Membership Plan"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "welcome": "Welcome back",
+    "complianceScore": "Compliance Score",
+    "riskIndex": "Risk Index",
+    "esgScore": "ESG Score",
+    "activeProjects": "Active Projects",
+    "quickActions": "Quick Actions",
+    "recentActivity": "Recent Activity",
+    "riskAlerts": "Risk Alerts",
+    "policyUpdates": "Policy Updates",
+    "pendingTasks": "Pending Tasks"
   },
   "auth": {
     "loginTitle": "Welcome Back",
@@ -99,8 +292,29 @@
     "passwordMismatch": "Passwords do not match",
     "passwordTooShort": "Password must be at least 6 characters"
   },
+  "about": {
+    "title": "About HQ",
+    "subtitle": "Professional decision consulting platform for Chinese AI companies going global and ESG innovation"
+  },
+  "help": {
+    "title": "Help Center",
+    "subtitle": "FAQ and user guides",
+    "searchPlaceholder": "Search questions...",
+    "feedback": "Submit Feedback"
+  },
   "footer": {
     "desc": "HQ HaiWen — Professional decision consulting for Chinese AI companies going global and ESG innovation",
-    "copyright": "© 2024 HQ HaiWen. All rights reserved."
+    "copyright": "© 2024 HQ HaiWen. All rights reserved.",
+    "product": "Products",
+    "company": "Company",
+    "legal": "Legal",
+    "aiChat": "AI Consulting",
+    "policyDb": "Policy Database",
+    "caseLibrary": "Case Library",
+    "expertHall": "Expert Hall",
+    "aboutUs": "About Us",
+    "help": "Help Center",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
   }
 }

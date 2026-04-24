@@ -115,3 +115,47 @@ export async function upsertDocument(doc: {
   })
   if (error) throw error
 }
+
+// 幂等检查：某个 tag 在给定日期是否已有 news 条目
+// 用于手动多次触发周更时避免写入重复数据
+export async function newsExistsForDate(tag: string, date: string): Promise<boolean> {
+  const supabase = createAdminClient()
+  const { data, error } = await supabase
+    .from('documents')
+    .select('id')
+    .eq('metadata->>type', 'news')
+    .eq('metadata->>tag', tag)
+    .eq('metadata->>date', date)
+    .limit(1)
+
+  if (error) throw error
+  return (data?.length ?? 0) > 0
+}
+
+// 按 tag 只保留最近 N 条 news，更老的自动删除
+// 防止每周累积导致检索多样性被旧新闻稀释
+export async function pruneOldNewsByTag(
+  tag: string,
+  keep: number = 4
+): Promise<{ deleted: number }> {
+  const supabase = createAdminClient()
+
+  const { data, error } = await supabase
+    .from('documents')
+    .select('id, created_at')
+    .eq('metadata->>type', 'news')
+    .eq('metadata->>tag', tag)
+    .order('created_at', { ascending: false })
+
+  if (error) throw error
+  if (!data || data.length <= keep) return { deleted: 0 }
+
+  const toDelete = data.slice(keep).map((d) => d.id)
+  const { error: delError } = await supabase
+    .from('documents')
+    .delete()
+    .in('id', toDelete)
+
+  if (delError) throw delError
+  return { deleted: toDelete.length }
+}

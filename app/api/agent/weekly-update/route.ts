@@ -1,6 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getEmbedding } from '@/lib/embedding'
-import { upsertDocument } from '@/lib/rag'
+import { upsertDocument, newsExistsForDate, pruneOldNewsByTag } from '@/lib/rag'
+
+// 每个 tag 最多保留最近多少条 news（防无限膨胀）
+const KEEP_PER_TAG = 4
 
 // 每周搜索的主题列表
 const SEARCH_TOPICS = [
@@ -85,36 +88,47 @@ export async function POST(req: NextRequest) {
 
   const results = {
     success: 0,
+    skipped: 0,
     failed: 0,
+    pruned: 0,
     errors: [] as string[],
   }
 
-  console.log(`[周更 Agent] 开始执行，共 ${SEARCH_TOPICS.length} 个主题`)
+  const today = new Date().toISOString().split('T')[0]
+  console.log(`[周更 Agent] 开始执行，共 ${SEARCH_TOPICS.length} 个主题，日期 ${today}`)
 
   for (const topic of SEARCH_TOPICS) {
     try {
-      console.log(`  搜索：${topic.query}`)
-
-      // 1. 联网搜索
-      const searchResults = await searchWeb(topic.query)
-      if (searchResults.length === 0) {
-        console.log(`  跳过（无结果）：${topic.query}`)
+      // 1. 当日幂等检查：同一 tag 同一天已写入则跳过
+      if (await newsExistsForDate(topic.tag, today)) {
+        console.log(`  跳过（今日已更新）：${topic.tag}`)
+        results.skipped++
         continue
       }
 
-      // 2. DeepSeek 总结
+      console.log(`  搜索：${topic.query}`)
+
+      // 2. 联网搜索
+      const searchResults = await searchWeb(topic.query)
+      if (searchResults.length === 0) {
+        console.log(`  跳过（无搜索结果）：${topic.query}`)
+        results.skipped++
+        continue
+      }
+
+      // 3. DeepSeek 总结
       const summary = await summarizeResults(topic.tag, searchResults)
 
-      // 3. 组合最终内容
+      // 4. 组合最终内容
       const content = [
         `最新动态：${topic.tag}`,
         `地区：${topic.region}`,
-        `更新日期：${new Date().toISOString().split('T')[0]}`,
+        `更新日期：${today}`,
         `内容摘要：\n${summary}`,
         `参考来源：${searchResults.map((r) => r.url).filter(Boolean).slice(0, 3).join('、')}`,
       ].join('\n')
 
-      // 4. 向量化并写入数据库
+      // 5. 向量化并写入数据库
       const embedding = await getEmbedding(content)
       await upsertDocument({
         content,
@@ -122,13 +136,19 @@ export async function POST(req: NextRequest) {
           type: 'news',
           region: topic.region,
           tag: topic.tag,
-          date: new Date().toISOString().split('T')[0],
+          date: today,
         },
         embedding,
       })
 
+      // 6. 写入后清理旧数据：同 tag 只保留最近 N 条
+      const { deleted } = await pruneOldNewsByTag(topic.tag, KEEP_PER_TAG)
+      if (deleted > 0) {
+        console.log(`    清理旧条目：${topic.tag} 删除 ${deleted} 条`)
+        results.pruned += deleted
+      }
+
       results.success++
-      // 避免限流
       await new Promise((r) => setTimeout(r, 500))
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err)
@@ -138,7 +158,9 @@ export async function POST(req: NextRequest) {
     }
   }
 
-  console.log(`[周更 Agent] 完成：成功 ${results.success}，失败 ${results.failed}`)
+  console.log(
+    `[周更 Agent] 完成：成功 ${results.success}，跳过 ${results.skipped}，失败 ${results.failed}，清理旧数据 ${results.pruned} 条`
+  )
 
   return NextResponse.json({
     message: '周更完成',

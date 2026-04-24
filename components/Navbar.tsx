@@ -35,6 +35,7 @@ export default function Navbar({ locale, user }: NavbarProps) {
   // Nav links differ for guest vs logged-in users
   const guestLinks = [
     { href: '', label: t('home') },
+    { href: '/trends', label: t('trends') },
     { href: '/policy-db', label: t('policyDb') },
     { href: '/cases', label: t('cases') },
     { href: '/expert-hall', label: t('expertHall') },
@@ -43,6 +44,7 @@ export default function Navbar({ locale, user }: NavbarProps) {
   const userLinks = [
     { href: '/dashboard', label: t('dashboard') },
     { href: '/ai-chat', label: t('chat') },
+    { href: '/trends', label: t('trends') },
     { href: '/policy-db', label: t('policyDb') },
     { href: '/cases', label: t('cases') },
   ]

@@ -19,8 +19,10 @@ export default function ChatInterface({ locale }: Props) {
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [showWelcome, setShowWelcome] = useState(true)
-  const messagesEndRef = useRef<HTMLDivElement>(null)
+  const messagesContainerRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
+  // 用户是否处于"靠近底部"的状态——决定是否自动跟随
+  const shouldAutoScrollRef = useRef(true)
 
   const suggestions = [
     t('suggestion1'),
@@ -29,9 +31,22 @@ export default function ChatInterface({ locale }: Props) {
     t('suggestion4'),
   ]
 
+  // 只滚动消息列表容器本身，避免影响整个页面（window）
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    const container = messagesContainerRef.current
+    if (!container) return
+    if (shouldAutoScrollRef.current) {
+      container.scrollTop = container.scrollHeight
+    }
   }, [messages])
+
+  // 监听用户滚动——距底小于 80px 视为"在底部"，才允许后续自动跟随
+  const handleScroll = () => {
+    const container = messagesContainerRef.current
+    if (!container) return
+    const { scrollTop, scrollHeight, clientHeight } = container
+    shouldAutoScrollRef.current = scrollHeight - scrollTop - clientHeight < 80
+  }
 
   // 自动调整输入框高度
   useEffect(() => {
@@ -47,6 +62,8 @@ export default function ChatInterface({ locale }: Props) {
 
     setShowWelcome(false)
     setInput('')
+    // 发送时强制回到底部跟随，避免被用户之前的上滑状态卡住
+    shouldAutoScrollRef.current = true
 
     const userMsg: Message = { role: 'user', content: trimmed }
     const newMessages = [...messages, userMsg]
@@ -167,7 +184,11 @@ export default function ChatInterface({ locale }: Props) {
       {/* ── Main chat area ── */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto px-4 py-6">
+        <div
+          ref={messagesContainerRef}
+          onScroll={handleScroll}
+          className="flex-1 overflow-y-auto px-4 py-6"
+        >
           <div className="max-w-3xl mx-auto space-y-6">
             {/* Welcome screen */}
             {showWelcome && (
@@ -230,8 +251,6 @@ export default function ChatInterface({ locale }: Props) {
                 )}
               </div>
             ))}
-
-            <div ref={messagesEndRef} />
           </div>
         </div>
 

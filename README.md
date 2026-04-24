@@ -1,6 +1,8 @@
 # 海问 HQ — 中国 AI 企业出海与 ESG 咨询平台
 
 > **分支：`nzh`** — 含 RAG 知识库 + 周更 Agent + 最新动态页
+>
+> For English documentation see [`README.en.md`](./README.en.md).
 
 海问 HQ 是一个面向中国 AI 企业的一站式出海与 ESG 合规咨询平台，集成 AI 智能问答、政策库、案例库、ESG 管理、风险评估等核心功能。本分支在原有基础上：
 
@@ -193,7 +195,8 @@ npm run dev
 │   ├── zh.json
 │   └── en.json
 ├── vercel.json                      # Cron 定时任务
-├── README.md                        # 本文件
+├── README.md                        # 本文件（中文）
+├── README.en.md                     # English README
 ├── CHANGELOG.md                     # ⭐ nzh 分支迭代日志
 └── MERGING_FROM_NZH.md              # ⭐ 给原作者的合并手册
 ```
@@ -251,7 +254,8 @@ vercel --prod
 
 | 文件 | 给谁看 | 作用 |
 |---|---|---|
-| `README.md` | 所有新同事 / 合作者 | 项目整体介绍（你正在看） |
+| `README.md` | 中文同事 / 合作者 | 项目整体介绍（你正在看） |
+| `README.en.md` | English speakers | English version of this README |
 | `CHANGELOG.md` | 所有协作者 | `nzh` 分支每轮迭代日志，倒序记录 |
 | `MERGING_FROM_NZH.md` | 原作者 / 上游 | 把 `nzh` 合回 `main` 的详细操作手册（SQL、env、验证、回滚） |
 

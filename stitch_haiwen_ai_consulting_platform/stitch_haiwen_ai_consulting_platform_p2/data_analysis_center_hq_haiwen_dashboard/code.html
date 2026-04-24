@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HQ Haiwen - Data Analysis Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "primary-fixed": "#dbe1ff",
+                "background": "#f7f9fb",
+                "primary-fixed-dim": "#b4c5ff",
+                "tertiary-fixed-dim": "#ffb596",
+                "on-tertiary-container": "#ffede6",
+                "on-secondary-fixed-variant": "#3a485c",
+                "surface-variant": "#e0e3e5",
+                "inverse-primary": "#b4c5ff",
+                "error": "#ba1a1a",
+                "surface-dim": "#d8dadc",
+                "on-secondary-container": "#57657b",
+                "tertiary-fixed": "#ffdbcd",
+                "on-surface-variant": "#434655",
+                "on-primary-fixed": "#00174b",
+                "on-tertiary-fixed-variant": "#7d2d00",
+                "surface-container-low": "#f2f4f6",
+                "on-primary": "#ffffff",
+                "inverse-on-surface": "#eff1f3",
+                "on-tertiary-fixed": "#360f00",
+                "outline-variant": "#c3c6d7",
+                "surface-container-highest": "#e0e3e5",
+                "secondary-container": "#d5e3fd",
+                "primary-container": "#2563eb",
+                "on-error": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "primary": "#004ac6",
+                "surface-tint": "#0053db",
+                "secondary-fixed-dim": "#b9c7e0",
+                "secondary-fixed": "#d5e3fd",
+                "on-primary-container": "#eeefff",
+                "on-error-container": "#93000a",
+                "outline": "#737686",
+                "inverse-surface": "#2d3133",
+                "surface-container-high": "#e6e8ea",
+                "surface-container": "#eceef0",
+                "surface": "#f7f9fb",
+                "surface-bright": "#f7f9fb",
+                "tertiary": "#943700",
+                "on-surface": "#191c1e",
+                "error-container": "#ffdad6",
+                "on-primary-fixed-variant": "#003ea8",
+                "on-background": "#191c1e",
+                "tertiary-container": "#bc4800",
+                "secondary": "#515f74",
+                "on-secondary-fixed": "#0d1c2f",
+                "on-secondary": "#ffffff"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {},
+        "fontFamily": {
+                "headline": [
+                        "Manrope"
+                ],
+                "display": [
+                        "Manrope"
+                ],
+                "body": [
+                        "Inter"
+                ],
+                "label": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {}
+},
+    },
+  }
+</script>
+<style>
+  body {
+    background-color: theme('colors.background');
+    color: theme('colors.on-surface');
+  }
+  .ghost-border {
+    border: 1px solid theme('colors.outline-variant' / 20%);
+  }
+  .ambient-shadow {
+    box-shadow: 0px 24px 48px rgba(25, 28, 30, 0.06);
+  }
+  .btn-primary-gradient {
+    background: linear-gradient(135deg, theme('colors.primary'), theme('colors.primary-container'));
+  }
+</style>
+</head>
+<body class="font-body antialiased flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md fixed top-0 w-full z-50 flex justify-between items-center px-8 h-16 max-w-full">
+<div class="flex items-center gap-6 border-r border-slate-200 dark:border-slate-800 pr-6">
+<span class="text-xl font-bold tracking-tighter text-blue-700 dark:text-blue-400 font-headline">HQ Haiwen</span>
+<span class="text-xs text-on-surface-variant font-medium tracking-wide">AI Globalization · ESG Decision</span>
+</div>
+<div class="hidden md:flex gap-8 items-center h-full">
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 font-['Manrope'] font-medium text-sm tracking-tight hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors px-2 py-1 rounded" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 font-['Manrope'] font-medium text-sm tracking-tight hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors px-2 py-1 rounded" href="#">AI Chat</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 font-['Manrope'] font-medium text-sm tracking-tight hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors px-2 py-1 rounded" href="#">Policy DB</a>
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 dark:border-blue-400 pb-1 font-['Manrope'] font-medium text-sm tracking-tight" href="#">Data Analysis Center</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-sm font-medium text-on-surface-variant flex items-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">language</span> EN / 中文
+      </button>
+<div class="h-4 w-px bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-sm font-bold text-primary">A</div>
+<div class="flex flex-col">
+<span class="text-xs font-semibold">user@hqhaiwen.com</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-wider">Enterprise</span>
+</div>
+</div>
+<button class="text-sm font-medium text-on-surface-variant hover:text-error transition-colors ml-4">Log Out</button>
+</div>
+</nav>
+<div class="flex flex-1 pt-16">
+<!-- SideNavBar -->
+<aside class="h-[calc(100vh-64px)] w-64 fixed left-0 top-16 bg-slate-50 dark:bg-slate-950 flex flex-col gap-2 p-6 overflow-y-auto">
+<div class="mb-4">
+<h3 class="font-['Manrope'] font-semibold text-xs uppercase tracking-widest text-blue-700 dark:text-blue-400 mb-2 px-3">Workspace</h3>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all rounded-lg text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span> Dashboard Home
+        </a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all rounded-lg text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span> AI Assistant
+        </a>
+</div>
+<div class="mb-4">
+<h3 class="font-['Manrope'] font-semibold text-xs uppercase tracking-widest text-blue-700 dark:text-blue-400 mb-2 px-3">Compliance Tools</h3>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all rounded-lg text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">gavel</span> Policy &amp; ESG Database
+        </a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all rounded-lg text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">troubleshoot</span> Compliance Diagnosis
+        </a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all rounded-lg text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">warning</span> Risk Assessment
+        </a>
+</div>
+<div class="mb-4">
+<h3 class="font-['Manrope'] font-semibold text-xs uppercase tracking-widest text-blue-700 dark:text-blue-400 mb-2 px-3">Go-Global Management</h3>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all rounded-lg text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span> ESG Management
+        </a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all rounded-lg text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">rocket_launch</span> Go-Global Decision Engine
+        </a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all rounded-lg text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">handyman</span> Solution Toolbox
+        </a>
+<a class="flex items-center gap-3 bg-white dark:bg-slate-900 text-blue-700 dark:text-blue-400 rounded-lg p-3 shadow-sm text-sm font-medium relative" href="#">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 absolute left-1"></span>
+<span class="material-symbols-outlined text-[20px] ml-1">bar_chart</span> Data Analysis Center
+        </a>
+</div>
+<div class="mb-4">
+<h3 class="font-['Manrope'] font-semibold text-xs uppercase tracking-widest text-blue-700 dark:text-blue-400 mb-2 px-3">Resource Ecosystem</h3>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all rounded-lg text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">hub</span> Case Library
+        </a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all rounded-lg text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">groups</span> Expert Hall
+        </a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 p-3 hover:bg-slate-200 dark:hover:bg-slate-800 transition-all rounded-lg text-sm font-medium" href="#">
+<span class="material-symbols-outlined text-[20px]">integration_instructions</span> Resource Integration Center
+        </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 p-8 xl:p-12 max-w-[1400px] mx-auto w-full">
+<!-- Header -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+<div>
+<h1 class="text-4xl font-headline font-bold text-on-surface mb-2 tracking-tight">Data Analysis Center</h1>
+<p class="text-sm font-label text-on-surface-variant tracking-wide uppercase">Panoramic data insights for enterprise compliance management</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative bg-surface-container-lowest rounded-lg ghost-border flex items-center px-4 py-2 cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="text-sm font-medium text-on-surface mr-2">Last 3 months</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">expand_more</span>
+</div>
+<button class="btn-primary-gradient text-on-primary rounded-full px-6 py-2.5 text-sm font-semibold flex items-center gap-2 hover:opacity-90 transition-opacity ambient-shadow">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">download</span> Export Report
+          </button>
+</div>
+</div>
+<!-- Metric Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<div class="bg-surface-container-lowest rounded-xl p-6 ghost-border flex flex-col justify-between h-36 hover:bg-surface-container-low transition-colors duration-300">
+<span class="text-sm text-on-surface-variant font-medium">Compliance Actions This Month</span>
+<div class="flex items-end justify-between">
+<span class="text-4xl font-headline font-bold text-on-surface">47</span>
+<span class="text-sm font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">+12</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 ghost-border flex flex-col justify-between h-36 hover:bg-surface-container-low transition-colors duration-300">
+<span class="text-sm text-on-surface-variant font-medium">Total AI Consultations</span>
+<div class="flex items-end justify-between">
+<span class="text-4xl font-headline font-bold text-on-surface">128</span>
+<span class="text-sm font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">+23</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 ghost-border flex flex-col justify-between h-36 hover:bg-surface-container-low transition-colors duration-300">
+<span class="text-sm text-on-surface-variant font-medium">Risk Event Resolution Rate</span>
+<div class="flex items-end justify-between">
+<span class="text-4xl font-headline font-bold text-on-surface">76%</span>
+<span class="text-sm font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">+5%</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 ghost-border flex flex-col justify-between h-36 hover:bg-surface-container-low transition-colors duration-300">
+<span class="text-sm text-on-surface-variant font-medium">Avg. Response Time</span>
+<div class="flex items-end justify-between">
+<span class="text-4xl font-headline font-bold text-on-surface">1.2<span class="text-lg text-on-surface-variant ml-1 font-normal">days</span></span>
+<span class="text-sm font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full">-0.3 days</span>
+</div>
+</div>
+</div>
+<!-- Middle Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+<!-- Chart 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 ghost-border">
+<div class="flex justify-between items-start mb-8">
+<h3 class="text-lg font-headline font-semibold text-on-surface">Compliance Score Trend</h3>
+<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-sm text-xs font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +16 points Continuous improvement
+            </div>
+</div>
+<div class="h-64 flex items-end justify-between gap-2 px-4">
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary-fixed rounded-t-md h-[58%] group-hover:bg-primary-fixed-dim transition-colors relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-semibold text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">58</span>
+</div>
+<span class="text-xs text-on-surface-variant">Jul</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary-fixed rounded-t-md h-[61%] group-hover:bg-primary-fixed-dim transition-colors relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-semibold text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">61</span>
+</div>
+<span class="text-xs text-on-surface-variant">Aug</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary-fixed rounded-t-md h-[64%] group-hover:bg-primary-fixed-dim transition-colors relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-semibold text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">64</span>
+</div>
+<span class="text-xs text-on-surface-variant">Sep</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary-fixed rounded-t-md h-[68%] group-hover:bg-primary-fixed-dim transition-colors relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-semibold text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">68</span>
+</div>
+<span class="text-xs text-on-surface-variant">Oct</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary-fixed rounded-t-md h-[71%] group-hover:bg-primary-fixed-dim transition-colors relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-semibold text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">71</span>
+</div>
+<span class="text-xs text-on-surface-variant">Nov</span>
+</div>
+<div class="w-full flex flex-col items-center gap-2 group">
+<div class="w-full bg-primary rounded-t-md h-[74%] relative">
+<span class="absolute -top-6 left-1/2 -translate-x-1/2 text-xs font-bold text-primary">74</span>
+</div>
+<span class="text-xs font-semibold text-on-surface">Dec</span>
+</div>
+</div>
+</div>
+<!-- Chart 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 ghost-border flex flex-col">
+<h3 class="text-lg font-headline font-semibold text-on-surface mb-8">Risk Event Trend</h3>
+<div class="flex-1 flex flex-col justify-center gap-6">
+<div class="w-full flex items-center gap-4">
+<span class="text-sm text-on-surface-variant w-8">Oct</span>
+<div class="flex-1 h-6 flex rounded-sm overflow-hidden">
+<div class="bg-red-500 h-full w-[15%]" title="High"></div>
+<div class="bg-orange-400 h-full w-[35%]" title="Medium"></div>
+<div class="bg-emerald-500 h-full w-[50%]" title="Low"></div>
+</div>
+</div>
+<div class="w-full flex items-center gap-4">
+<span class="text-sm text-on-surface-variant w-8">Nov</span>
+<div class="flex-1 h-6 flex rounded-sm overflow-hidden">
+<div class="bg-red-500 h-full w-[10%]" title="High"></div>
+<div class="bg-orange-400 h-full w-[30%]" title="Medium"></div>
+<div class="bg-emerald-500 h-full w-[60%]" title="Low"></div>
+</div>
+</div>
+<div class="w-full flex items-center gap-4">
+<span class="text-sm font-semibold text-on-surface w-8">Dec</span>
+<div class="flex-1 h-6 flex rounded-sm overflow-hidden">
+<div class="bg-red-500 h-full w-[5%]" title="High"></div>
+<div class="bg-orange-400 h-full w-[20%]" title="Medium"></div>
+<div class="bg-emerald-500 h-full w-[75%]" title="Low"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-center gap-6 mt-8 pt-4 border-t border-surface-container-low">
+<div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-red-500"></span><span class="text-xs text-on-surface-variant">High</span></div>
+<div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-orange-400"></span><span class="text-xs text-on-surface-variant">Medium</span></div>
+<div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-emerald-500"></span><span class="text-xs text-on-surface-variant">Low</span></div>
+</div>
+</div>
+</div>
+<!-- Bottom Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+<!-- Coverage -->
+<div class="bg-surface-container-lowest rounded-xl p-8 ghost-border">
+<h3 class="text-lg font-headline font-semibold text-on-surface mb-6">Target Market Compliance Coverage</h3>
+<div class="space-y-5 mb-8">
+<div>
+<div class="flex justify-between text-sm mb-1.5"><span class="font-medium">EU</span><span class="text-on-surface-variant">72%</span></div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden"><div class="bg-blue-500 h-full rounded-full" style="width: 72%"></div></div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-1.5"><span class="font-medium">Singapore</span><span class="text-on-surface-variant">88%</span></div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden"><div class="bg-emerald-500 h-full rounded-full" style="width: 88%"></div></div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-1.5"><span class="font-medium">Japan</span><span class="text-on-surface-variant">65%</span></div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden"><div class="bg-purple-500 h-full rounded-full" style="width: 65%"></div></div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-1.5"><span class="font-medium">UK</span><span class="text-on-surface-variant">58%</span></div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden"><div class="bg-orange-400 h-full rounded-full" style="width: 58%"></div></div>
+</div>
+<div>
+<div class="flex justify-between text-sm mb-1.5"><span class="font-medium">UAE</span><span class="text-on-surface-variant">45%</span></div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden"><div class="bg-teal-500 h-full rounded-full" style="width: 45%"></div></div>
+</div>
+</div>
+<button class="w-full py-3 rounded-lg border border-outline-variant/20 text-primary font-medium text-sm hover:bg-surface-container-low transition-colors">
+            Analyze More Markets →
+          </button>
+</div>
+<!-- Activity Log -->
+<div class="bg-surface-container-lowest rounded-xl p-8 ghost-border flex flex-col">
+<h3 class="text-lg font-headline font-semibold text-on-surface mb-6">Recent Activity Log</h3>
+<div class="flex-1 space-y-0">
+<div class="flex gap-4 p-3 hover:bg-surface-container-low transition-colors rounded-lg group">
+<div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-sm font-medium text-on-surface group-hover:text-primary transition-colors">Completed EU AI Act compliance diagnosis</span>
+<span class="text-xs text-on-surface-variant mt-0.5">2024-12-01</span>
+</div>
+</div>
+<div class="flex gap-4 p-3 hover:bg-surface-container-low transition-colors rounded-lg group">
+<div class="w-10 h-10 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">forum</span>
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-sm font-medium text-on-surface group-hover:text-primary transition-colors">AI consultation: GDPR data localization requirements</span>
+<span class="text-xs text-on-surface-variant mt-0.5">2024-11-30</span>
+</div>
+</div>
+<div class="flex gap-4 p-3 hover:bg-surface-container-low transition-colors rounded-lg group">
+<div class="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">update</span>
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-sm font-medium text-on-surface group-hover:text-primary transition-colors">Updated ESG data (Q4)</span>
+<span class="text-xs text-on-surface-variant mt-0.5">2024-11-28</span>
+</div>
+</div>
+<div class="flex gap-4 p-3 hover:bg-surface-container-low transition-colors rounded-lg group">
+<div class="w-10 h-10 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-sm font-medium text-on-surface group-hover:text-primary transition-colors">Downloaded Singapore PDPA compliance template</span>
+<span class="text-xs text-on-surface-variant mt-0.5">2024-11-27</span>
+</div>
+</div>
+<div class="flex gap-4 p-3 hover:bg-surface-container-low transition-colors rounded-lg group">
+<div class="w-10 h-10 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-sm font-medium text-on-surface group-hover:text-primary transition-colors">Booked ESG expert consultation</span>
+<span class="text-xs text-on-surface-variant mt-0.5">2024-11-25</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-on-primary-fixed mt-auto py-16 text-on-primary-container z-10 relative ml-64 border-t-4 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 max-w-[1400px] mx-auto">
+<div>
+<h4 class="font-['Manrope'] font-bold text-lg mb-4 text-white">HQ Haiwen</h4>
+<p class="font-['Inter'] text-sm text-blue-200/70 leading-relaxed mb-6">AI Globalization · ESG Decision<br/>Empowering enterprise compliance globally.</p>
+<p class="font-['Inter'] text-xs text-blue-300/50">© 2024 HQ Haiwen. All rights reserved.</p>
+</div>
+<div>
+<h5 class="font-['Manrope'] font-semibold text-sm uppercase tracking-wider mb-6 text-white/90">Products</h5>
+<ul class="space-y-4 font-['Inter'] text-sm text-blue-200/80">
+<li><a class="hover:text-white transition-colors" href="#">AI Consulting</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Policy Database</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Compliance Diagnosis</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-['Manrope'] font-semibold text-sm uppercase tracking-wider mb-6 text-white/90">Company</h5>
+<ul class="space-y-4 font-['Inter'] text-sm text-blue-200/80">
+<li><a class="hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Help Center</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-['Manrope'] font-semibold text-sm uppercase tracking-wider mb-6 text-white/90">Legal</h5>
+<ul class="space-y-4 font-['Inter'] text-sm text-blue-200/80">
+<li><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enterprise Management Center - HQ Haiwen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#eeefff",
+                      "secondary": "#515f74",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "inverse-primary": "#b4c5ff",
+                      "surface-dim": "#d8dadc",
+                      "on-primary-fixed": "#00174b",
+                      "tertiary": "#943700",
+                      "tertiary-container": "#bc4800",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-low": "#f2f4f6",
+                      "surface": "#f7f9fb",
+                      "primary-fixed": "#dbe1ff",
+                      "on-tertiary-fixed": "#360f00",
+                      "on-tertiary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "inverse-on-surface": "#eff1f3",
+                      "secondary-fixed-dim": "#b9c7e0",
+                      "on-secondary-fixed-variant": "#3a485c",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "on-surface": "#191c1e",
+                      "surface-container": "#eceef0",
+                      "secondary-fixed": "#d5e3fd",
+                      "on-background": "#191c1e",
+                      "surface-container-highest": "#e0e3e5",
+                      "surface-variant": "#e0e3e5",
+                      "error-container": "#ffdad6",
+                      "on-secondary-container": "#57657b",
+                      "on-surface-variant": "#434655",
+                      "primary-container": "#2563eb",
+                      "primary": "#004ac6",
+                      "on-error-container": "#93000a",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "surface-bright": "#f7f9fb",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed": "#ffdbcd",
+                      "on-tertiary-container": "#ffede6",
+                      "on-secondary-fixed": "#0d1c2f",
+                      "surface-tint": "#0053db",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#2d3133",
+                      "background": "#f7f9fb",
+                      "outline": "#737686",
+                      "outline-variant": "#c3c6d7",
+                      "error": "#ba1a1a",
+                      "surface-container-high": "#e6e8ea",
+                      "secondary-container": "#d5e3fd"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Manrope"
+                      ],
+                      "display": [
+                              "Manrope"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {}
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ambient-shadow {
+            box-shadow: 0px 24px 48px rgba(25, 28, 30, 0.06);
+        }
+        .gradient-primary {
+            background: linear-gradient(135deg, #004ac6 0%, #2563eb 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-white/80 dark:bg-slate-950/80 backdrop-blur-md text-blue-600 dark:text-blue-400 font-['Manrope'] font-bold tracking-tight docked full-width top-0 sticky border-b border-slate-100 dark:border-slate-800 shadow-sm flex justify-between items-center w-full px-6 py-3 z-50">
+<div class="text-xl font-black text-blue-700 dark:text-blue-400">HQ Haiwen</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-6">
+<!-- Suppressed top links as per logic, replacing with actions -->
+</nav>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-colors scale-95 transition-transform active:opacity-80" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-colors scale-95 transition-transform active:opacity-80" data-icon="help">help</span>
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-colors scale-95 transition-transform active:opacity-80" data-icon="settings">settings</span>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-outline-variant/20 object-cover" data-alt="Close up portrait of a professional businessman in a bright modern office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpsSkK4fkd0V-hhgwmop4jXE2r4jSkNDYj1qfT_ap63ZkfBd2DT8e8qXuUJLSJI80ndzigL7irTl2Yx-rKfhPKX_Mc8OOi8wywzRppfT2JnyuyxKdd91SUiCQMTELbrr4YQOUDdbf8knoeeBcAMbwQrg32mYzqlwx1AduQ-dYQg0IXhmtRdnOYUcjEnyGTfEoD5pB0CHQbriiOiyU0vj7L_RSogc2m61aUacmnseiLXP55tuNOfBiqckJLz8rL544OY29Lw836L_8"/>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- SideNavBar (Shared Component) -->
+<aside class="bg-slate-50 dark:bg-slate-900 text-blue-600 dark:text-blue-400 font-['Inter'] text-sm font-medium h-screen w-64 fixed left-0 top-0 hidden lg:flex flex-col shadow-none flex flex-col gap-2 p-4 pt-20 border-r bg-slate-100 dark:bg-slate-800/50">
+<div class="mb-8 px-4">
+<h2 class="text-lg font-extrabold text-slate-900 dark:text-white font-headline">HQ Haiwen</h2>
+<p class="text-on-surface-variant text-xs mt-1 uppercase tracking-widest">Enterprise Hub</p>
+</div>
+<nav class="flex flex-col gap-2 flex-1">
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-400 rounded-lg shadow-sm font-bold scale-95 transition-transform active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg hover:translate-x-1 transition-all duration-200 cursor-pointer transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="shield_person">shield_person</span>
+                    Account &amp; Permissions
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg hover:translate-x-1 transition-all duration-200 cursor-pointer transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="tactic">tactic</span>
+                    Project Management
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg hover:translate-x-1 transition-all duration-200 cursor-pointer transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+                    Document Management
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50 rounded-lg hover:translate-x-1 transition-all duration-200 cursor-pointer transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+                    Message Center
+                </a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/20">
+<button class="w-full py-2 px-4 gradient-primary text-on-primary rounded-full font-medium text-sm hover:opacity-90 transition-opacity">Premium Upgrade</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 lg:ml-64 p-8 md:p-12 overflow-y-auto w-full max-w-[1440px] mx-auto flex flex-col gap-12 bg-surface">
+<!-- Page Header -->
+<div class="flex flex-col gap-2 max-w-3xl">
+<h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface">Enterprise Management Center</h1>
+<p class="font-body text-base md:text-lg text-on-surface-variant leading-relaxed">Integrated management for enterprise accounts, team collaboration, and compliance projects.</p>
+</div>
+<!-- Enterprise Profile Card -->
+<section class="bg-surface-container-lowest rounded-xl ambient-shadow overflow-hidden flex flex-col border border-outline-variant/20">
+<div class="p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 bg-white">
+<div class="flex items-center gap-6">
+<div class="w-20 h-20 rounded-xl gradient-primary flex items-center justify-center text-white font-headline text-2xl font-bold shadow-lg">
+                            HQ
+                        </div>
+<div class="flex flex-col gap-1">
+<h2 class="font-headline text-2xl font-bold text-on-surface flex items-center gap-3">
+                                Example Tech Co., Ltd.
+                                <span class="bg-secondary-container text-on-secondary-container text-xs font-semibold px-2 py-1 rounded-sm uppercase tracking-wider">Active</span>
+</h2>
+<p class="text-on-surface-variant text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+                                Enterprise Plan · Valid until Dec 31, 2025
+                            </p>
+</div>
+</div>
+<button class="px-6 py-2 border border-outline-variant/20 text-primary font-medium rounded-full hover:bg-surface-container-low transition-colors text-sm">
+                        Manage Plan
+                    </button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-[1px] bg-outline-variant/20">
+<div class="bg-surface-container-low p-6 flex flex-col gap-1">
+<span class="text-on-surface-variant text-xs font-semibold uppercase tracking-widest">Team Members</span>
+<span class="font-headline text-2xl font-bold text-on-surface">8</span>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col gap-1">
+<span class="text-on-surface-variant text-xs font-semibold uppercase tracking-widest">Active Projects</span>
+<span class="font-headline text-2xl font-bold text-on-surface">3</span>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col gap-1">
+<span class="text-on-surface-variant text-xs font-semibold uppercase tracking-widest">Compliance Docs</span>
+<span class="font-headline text-2xl font-bold text-on-surface">12</span>
+</div>
+<div class="bg-surface-container-low p-6 flex flex-col gap-1">
+<span class="text-on-surface-variant text-xs font-semibold uppercase tracking-widest">Subscription</span>
+<span class="font-headline text-lg font-bold text-primary mt-1">Enterprise</span>
+</div>
+</div>
+</section>
+<!-- Management Feature Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/20 hover:ambient-shadow transition-shadow cursor-pointer flex flex-col gap-4 group">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Account &amp; Permissions</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Manage team access, roles, and security policies across your organization.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/20 hover:ambient-shadow transition-shadow cursor-pointer flex flex-col gap-4 group relative overflow-hidden">
+<div class="absolute top-6 right-6 bg-secondary-container text-on-secondary-container text-xs font-semibold px-2 py-1 rounded-sm uppercase tracking-wider">
+                        3 Active
+                    </div>
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="view_kanban">view_kanban</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Project Management</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Track compliance initiatives, milestones, and cross-functional team progress.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-outline-variant/20 hover:ambient-shadow transition-shadow cursor-pointer flex flex-col gap-4 group relative overflow-hidden">
+<div class="absolute top-6 right-6 bg-secondary-container text-on-secondary-container text-xs font-semibold px-2 py-1 rounded-sm uppercase tracking-wider">
+                        12 Docs
+                    </div>
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="folder">folder</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface">Document Management</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Secure storage and version control for all enterprise policies and reports.</p>
+</div>
+<!-- Card 4 (Hovered Style) -->
+<div class="bg-surface-container-lowest rounded-xl p-8 border border-primary ambient-shadow cursor-pointer flex flex-col gap-4 group relative overflow-hidden transform -translate-y-1 transition-all">
+<div class="absolute top-6 right-6 bg-error-container text-on-error-container text-xs font-semibold px-2 py-1 rounded-sm uppercase tracking-wider animate-pulse">
+                        5 Unread
+                    </div>
+<div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center mb-2 shadow-md">
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-primary">Message Center</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Review urgent compliance alerts, system notifications, and team mentions.</p>
+</div>
+</section>
+<!-- Upgrade Banner -->
+<section class="rounded-xl gradient-primary p-10 md:p-12 text-white flex flex-col md:flex-row items-center justify-between gap-8 ambient-shadow relative overflow-hidden">
+<!-- Abstract background element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full transform translate-x-1/3 -translate-y-1/3 blur-2xl"></div>
+<div class="flex flex-col gap-3 relative z-10 max-w-2xl">
+<h3 class="font-headline text-2xl md:text-3xl font-extrabold tracking-tight">Upgrade to Premium for More Features</h3>
+<p class="text-primary-fixed-dim text-base md:text-lg leading-relaxed">Multi-brand management, API integration, dedicated CSM, unlimited storage</p>
+</div>
+<button class="px-8 py-3 bg-white text-primary font-bold rounded-full hover:bg-surface-container-lowest transition-colors shadow-lg whitespace-nowrap relative z-10">
+                    Learn More
+                </button>
+</section>
+</main>
+</div>
+<!-- Standard Dark Navy Footer (Minimal version for dashboard context) -->
+<footer class="bg-on-surface text-surface-container-low py-8 px-6 lg:pl-72 text-sm">
+<div class="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="font-headline font-bold text-white tracking-wider">HQ HAIWEN</div>
+<div class="flex gap-6 text-outline-variant">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-white transition-colors" href="#">Support</a>
+</div>
+<div class="text-outline-variant">
+                © 2024 Example Tech Co., Ltd. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

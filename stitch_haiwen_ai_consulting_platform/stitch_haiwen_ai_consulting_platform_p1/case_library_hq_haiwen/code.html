@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Case Library | HaiWen Strategic AI Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#515f74",
+                        "on-tertiary-container": "#ffede6",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-surface-variant": "#434655",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#c3c6d7",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-background": "#191c1e",
+                        "secondary-fixed": "#d5e3fd",
+                        "on-surface": "#191c1e",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-highest": "#e0e3e5",
+                        "secondary-container": "#d5e3fd",
+                        "surface-tint": "#0053db",
+                        "tertiary-container": "#bc4800",
+                        "error": "#ba1a1a",
+                        "on-primary-container": "#eeefff",
+                        "tertiary-fixed": "#ffdbcd",
+                        "surface-dim": "#d8dadc",
+                        "surface-bright": "#f7f9fb",
+                        "outline": "#737686",
+                        "on-secondary-container": "#57657b",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dbe1ff",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "inverse-primary": "#b4c5ff",
+                        "tertiary": "#943700",
+                        "on-primary-fixed": "#00174b",
+                        "surface-container-high": "#e6e8ea",
+                        "primary": "#004ac6",
+                        "background": "#f7f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "primary-container": "#2563eb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ambient-shadow {
+            box-shadow: 0px 24px 48px rgba(25, 28, 30, 0.06);
+        }
+        .ghost-border {
+            outline: 1px solid rgba(195, 198, 215, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#f7f9fb]/80 dark:bg-slate-900/80 backdrop-blur-md border-none transition-colors duration-300">
+<nav class="flex justify-between items-center px-8 h-20 w-full max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#191c1e] dark:text-white font-headline">HaiWen</div>
+<div class="hidden md:flex items-center space-x-8 font-headline tracking-tight font-semibold">
+<a class="text-[#004ac6] dark:text-[#2563eb] border-b-2 border-[#004ac6] pb-1 transition-opacity hover:opacity-80" href="#">Cases</a>
+<a class="text-[#434655] dark:text-slate-400 hover:text-[#004ac6] transition-opacity" href="#">Insights</a>
+<a class="text-[#434655] dark:text-slate-400 hover:text-[#004ac6] transition-opacity" href="#">Strategy</a>
+<a class="text-[#434655] dark:text-slate-400 hover:text-[#004ac6] transition-opacity" href="#">ESG</a>
+<a class="text-[#434655] dark:text-slate-400 hover:text-[#004ac6] transition-opacity" href="#">Network</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity p-2 scale-95 active:scale-90 duration-200" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity p-2 scale-95 active:scale-90 duration-200" data-icon="account_circle">account_circle</button>
+</div>
+</nav>
+</header>
+<main class="flex-grow pt-32 pb-20">
+<div class="max-w-screen-2xl mx-auto px-8">
+<!-- Hero Section -->
+<section class="mb-16 max-w-4xl">
+<h4 class="text-primary font-headline font-bold tracking-[0.1em] uppercase text-xs mb-4">Strategic Archives</h4>
+<h1 class="text-5xl font-headline font-extrabold tracking-tighter text-on-surface mb-6 leading-[1.1]">Case Library</h1>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-2">Real-world globalization cases of Chinese AI companies.</p>
+<p class="text-on-surface-variant opacity-70">Navigate through strategic hurdles, regulatory compliance, and successful market entries facilitated by our AI-driven ESG consulting framework.</p>
+</section>
+<!-- Filter Bar & Grid Layout -->
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Main Content Column -->
+<div class="flex-grow">
+<!-- Filter Bar -->
+<div class="bg-surface-container-lowest ghost-border rounded-xl p-4 mb-8 flex flex-wrap items-center gap-4">
+<div class="relative flex-grow min-w-[300px]">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border-none rounded-lg focus:ring-2 focus:ring-primary/20 text-sm placeholder:text-outline" placeholder="Search company name or keyword..." type="text"/>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-3 bg-surface-container-low rounded-lg text-sm font-semibold text-on-surface-variant hover:bg-surface-container-high transition-colors">
+                                All Regions <span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-3 bg-surface-container-low rounded-lg text-sm font-semibold text-on-surface-variant hover:bg-surface-container-high transition-colors">
+                                All Industries <span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-3 bg-surface-container-low rounded-lg text-sm font-semibold text-on-surface-variant hover:bg-surface-container-high transition-colors">
+                                ESG Themes <span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+<div class="mb-6 flex justify-between items-center">
+<span class="text-sm font-semibold text-on-surface-variant">8 cases found</span>
+<div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-outline">
+                            Sort by: <span class="text-primary">Recent Impact</span>
+</div>
+</div>
+<!-- Case Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+<!-- Card 1: SenseTime -->
+<div class="group bg-surface-container-lowest rounded-xl p-8 ambient-shadow border-none transition-all duration-300 hover:-translate-y-1">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center overflow-hidden">
+<img alt="SenseTime Logo" class="w-10 h-10 object-contain" data-alt="minimalist professional logo for a high-tech AI company with clean blue geometric shapes on light background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8QQluf3Leh07X41jJXsXUP0rUab0h4MvOp7xbTaH0tyan55gIR0Nf3Z8oDsqt56xdwvEARWZ_Nub_CTv9Wd8EllRif6FxoOA8-XLa5mYgEqn1bTxynuwMHaV5IpCIVvLhNKp5ZUSLa-ZXnPdAoo-D86WObaV2dM0-BDTwnm6G-wPxfX2CeCirBAXPNrLD_rdNm7mmFNrS5aEwWUJMnuD8jTNo1HD_JMXsV3CFLtQoKqKdWcTJpgbhlpOgeYByN4bVqIFF8-6jYCI"/>
+</div>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-widest rounded-sm uppercase">ESG S</span>
+</div>
+<div class="flex items-center gap-4 text-xs font-semibold text-outline mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="category">category</span> Computer Vision</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="public">public</span> SE Asia</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="calendar_today">calendar_today</span> 2023</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-4 group-hover:text-primary transition-colors">SenseTime: Smart City Governance in Thailand</h3>
+<div class="mb-6">
+<label class="text-[10px] font-black uppercase tracking-widest text-primary mb-2 block">Key Challenge</label>
+<p class="text-sm text-on-surface-variant leading-relaxed">Adapting biometric data processing pipelines to align with Thailand's PDPA while maintaining 99.9% accuracy for public safety infrastructure.</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-xs rounded-full">Smart City</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-xs rounded-full">Data Localization</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-xs rounded-full">PDPA</span>
+</div>
+<button class="w-full py-4 border border-outline-variant/30 rounded-full text-sm font-bold text-primary group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">View Details</button>
+</div>
+<!-- Card 2: Baidu Apollo -->
+<div class="group bg-surface-container-lowest rounded-xl p-8 ambient-shadow border-none transition-all duration-300 hover:-translate-y-1">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center overflow-hidden">
+<img alt="Apollo Logo" class="w-10 h-10 object-contain" data-alt="professional technology logo icon in blue and white high contrast style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcpQFd5072tP5rlAxl74lfdaSLHao2PrKannYjtzNZ9nRacbJ5rUmIc2Wxx-FJA3s5FC_j1HaAK-KSP2JcahDE2O7lQ-pgHq_KCoPktrcMcu8-n68ix_Mi-NWLKtROBtMb1J7eQKfdM3nOewexHogda2S5JlD83v-OBf39UmeRWYjQZVP_KeOU8g8Uvbl6IJHPCDyVulfedUgoJ74ihPdE6mue_wgXk4aZqUStXWTXxLhYYa-r1EY2lwX2-ILUKXU8hv_MU2F28FU"/>
+</div>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-widest rounded-sm uppercase">ESG E+S</span>
+</div>
+<div class="flex items-center gap-4 text-xs font-semibold text-outline mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="commute">commute</span> Autonomous Driving</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="public">public</span> EU</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="calendar_today">calendar_today</span> 2024</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-4 group-hover:text-primary transition-colors">Baidu Apollo: EU Road Safety Compliance</h3>
+<div class="mb-6">
+<label class="text-[10px] font-black uppercase tracking-widest text-primary mb-2 block">Key Challenge</label>
+<p class="text-sm text-on-surface-variant leading-relaxed">Securing ethical AI certification for L4 autonomous systems in accordance with the proposed EU AI Act’s high-risk system requirements.</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-xs rounded-full">GDPR</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-xs rounded-full">Ethical AI</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-xs rounded-full">L4 Autonomy</span>
+</div>
+<button class="w-full py-4 border border-outline-variant/30 rounded-full text-sm font-bold text-primary group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">View Details</button>
+</div>
+<!-- Card 3: Huawei Cloud -->
+<div class="group bg-surface-container-lowest rounded-xl p-8 ambient-shadow border-none transition-all duration-300 hover:-translate-y-1">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center overflow-hidden">
+<img alt="Huawei Logo" class="w-10 h-10 object-contain" data-alt="corporate technology brand logo mark in shades of blue and professional gray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOJ5BNSB9j6QqBWF0yacJ_TrBuhCnQaW8xzJaLgWjMzz29oJ1ZwlJB0RCx-maUaG_45sEomOosZim5HNNzmeCHSbIPpiaeZC9_JHnQZ312klcwSNJp-Ci7CVFzMhNW2fUclcIf_3IQpCFGYeJLCiny8Z9Vx6qDxJZAGX1TefWInNRYrQJ0NbmbIYwqfTslMY4zUI0-qc6gQPEvzRvNIRmhj9FCLptRgQBBsWCPjZqYUqSUfF2wTFG8hzRZ3aBUTkxc6VIoTlSmpgQ"/>
+</div>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-widest rounded-sm uppercase">ESG E</span>
+</div>
+<div class="flex items-center gap-4 text-xs font-semibold text-outline mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="cloud">cloud</span> Cloud / Infra</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="public">public</span> MEA</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="calendar_today">calendar_today</span> 2023</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-4 group-hover:text-primary transition-colors">Huawei Cloud: Green Data Centers in UAE</h3>
+<div class="mb-6">
+<label class="text-[10px] font-black uppercase tracking-widest text-primary mb-2 block">Key Challenge</label>
+<p class="text-sm text-on-surface-variant leading-relaxed">Implementing sustainable liquid cooling systems to meet UAE's Net Zero 2050 targets while scaling high-compute AI clusters.</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-xs rounded-full">Net Zero</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-xs rounded-full">Green Energy</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-xs rounded-full">Sovereign Cloud</span>
+</div>
+<button class="w-full py-4 border border-outline-variant/30 rounded-full text-sm font-bold text-primary group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">View Details</button>
+</div>
+<!-- Card 4: Horizon Robotics -->
+<div class="group bg-surface-container-lowest rounded-xl p-8 ambient-shadow border-none transition-all duration-300 hover:-translate-y-1">
+<div class="flex justify-between items-start mb-6">
+<div class="w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center overflow-hidden">
+<img alt="Horizon Logo" class="w-10 h-10 object-contain" data-alt="clean geometric robotics company logo in corporate professional style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsJPz5dhzvBJsHBsXeOjlSJVWTUXCwa0ch6y0N80bmgCem3qu47Dr5BWN5Vs4HYGdtBQUkKqdcaTzvGd8lLp4PQer6QA4NFrphQ-QGy6ZkBK1jxbpruSzaBFOh88RTC7w63w1DVs4Yt9vl1JFL-9bk7cGdZ99WGXNMQU2DFEpw83MmemR4H_zz_gvtt9wvE4SpzVQq6wY2sZICK9qZLziiJ33IqV0YrjV-pMTWB-Ov8C-_j2sY820xAyxYAzDVFuoYtqLKCLZY7CI"/>
+</div>
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold tracking-widest rounded-sm uppercase">ESG S</span>
+</div>
+<div class="flex items-center gap-4 text-xs font-semibold text-outline mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="memory">memory</span> AI Chips</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="public">public</span> North America</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="calendar_today">calendar_today</span> 2024</span>
+</div>
+<h3 class="text-xl font-headline font-bold text-on-surface mb-4 group-hover:text-primary transition-colors">Horizon Robotics: Supply Chain Resilience</h3>
+<div class="mb-6">
+<label class="text-[10px] font-black uppercase tracking-widest text-primary mb-2 block">Key Challenge</label>
+<p class="text-sm text-on-surface-variant leading-relaxed">Navigating export controls and ensuring transparency in semiconductor material sourcing for global automotive Tier-1 partners.</p>
+</div>
+<div class="flex flex-wrap gap-2 mb-8">
+<span class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-xs rounded-full">Compliance</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-xs rounded-full">Logistics</span>
+<span class="px-3 py-1 bg-surface-container-low text-on-surface-variant text-xs rounded-full">Automotive</span>
+</div>
+<button class="w-full py-4 border border-outline-variant/30 rounded-full text-sm font-bold text-primary group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">View Details</button>
+</div>
+</div>
+</div>
+<!-- Sidebar Feature -->
+<aside class="w-full lg:w-[400px] shrink-0">
+<div class="sticky top-32">
+<div class="bg-primary p-8 rounded-xl text-white ambient-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+<span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded text-[10px] font-black tracking-widest uppercase mb-6">Featured Case Insight</span>
+<h2 class="text-2xl font-headline font-extrabold mb-4 leading-tight">Entering the Middle East with AI Smart City Solutions</h2>
+<p class="text-white/80 text-sm leading-relaxed mb-6">Explore how leading AI firms are leveraging the G42 partnership and Saudi Vision 2030 to establish sovereign AI foundations.</p>
+<div class="bg-white/10 backdrop-blur-md rounded-lg p-4 mb-8">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-white/60" data-icon="trending_up">trending_up</span>
+<span class="text-xs font-bold uppercase tracking-wider">Success Metrics</span>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<div class="text-xl font-headline font-black">120%</div>
+<div class="text-[10px] opacity-60 uppercase font-bold">Growth YoY</div>
+</div>
+<div>
+<div class="text-xl font-headline font-black">ZERO</div>
+<div class="text-[10px] opacity-60 uppercase font-bold">Audit Red-Flags</div>
+</div>
+</div>
+</div>
+<a class="flex items-center justify-between group" href="#">
+<span class="font-bold text-sm">Read full strategy</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="mt-8 bg-surface-container-low rounded-xl p-6">
+<h4 class="font-headline font-bold text-on-surface mb-4">ESG Standards Map</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface-variant">Data Sovereignty</span>
+<span class="w-16 h-1 bg-primary rounded-full"></span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface-variant">Carbon Disclosure</span>
+<span class="w-12 h-1 bg-primary/40 rounded-full"></span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-on-surface-variant">Algorithmic Bias</span>
+<span class="w-20 h-1 bg-primary rounded-full"></span>
+</div>
+</div>
+<p class="mt-6 text-[11px] text-on-surface-variant italic">Aggregated compliance levels across current active cases.</p>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-[#f2f4f6] dark:bg-slate-950">
+<div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center px-12 py-16 gap-8">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="font-manrope font-bold text-[#191c1e] dark:text-white text-xl">HaiWen</div>
+<p class="font-inter text-sm antialiased text-[#434655] dark:text-slate-500">© 2024 HaiWen Strategic AI Consulting. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 font-inter text-sm antialiased">
+<a class="text-[#434655] dark:text-slate-500 hover:text-[#004ac6] transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#434655] dark:text-slate-500 hover:text-[#004ac6] transition-colors" href="#">Terms of Service</a>
+<a class="text-[#434655] dark:text-slate-500 hover:text-[#004ac6] transition-colors" href="#">Ethical AI Charter</a>
+<a class="text-[#434655] dark:text-slate-500 hover:text-[#004ac6] transition-colors" href="#">ESG Standards</a>
+</div>
+</div>
+</footer>
+</body></html>

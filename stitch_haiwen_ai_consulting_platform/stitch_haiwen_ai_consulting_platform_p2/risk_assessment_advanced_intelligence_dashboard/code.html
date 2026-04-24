@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HQ Haiwen - Risk Assessment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#191c1e",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-container": "#d5e3fd",
+                        "tertiary": "#943700",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#eeefff",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "on-secondary": "#ffffff",
+                        "background": "#f7f9fb",
+                        "secondary": "#515f74",
+                        "secondary-fixed": "#d5e3fd",
+                        "on-tertiary-container": "#ffede6",
+                        "surface-variant": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-primary-fixed": "#00174b",
+                        "outline": "#737686",
+                        "surface-container-high": "#e6e8ea",
+                        "surface": "#f7f9fb",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "outline-variant": "#c3c6d7",
+                        "surface-dim": "#d8dadc",
+                        "tertiary-fixed": "#ffdbcd",
+                        "primary": "#004ac6",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-container": "#bc4800",
+                        "primary-container": "#2563eb",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-tint": "#0053db",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-secondary-container": "#57657b",
+                        "on-surface-variant": "#434655",
+                        "on-background": "#191c1e",
+                        "inverse-primary": "#b4c5ff",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary-fixed-variant": "#003ea8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "display": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    "fontSize": {}
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col md:flex-row">
+<!-- TopNavBar Web-->
+<nav class="hidden md:flex flex-col bg-white/80 backdrop-blur-md w-full max-w-[1600px] mx-auto docked top-0 z-50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] justify-between items-center px-10 h-20 transition-all fixed">
+<div class="flex items-center justify-between w-full">
+<div class="flex items-center gap-8">
+<div class="text-xl font-extrabold tracking-tighter text-primary">RiskArchitect</div>
+<div class="flex gap-6 h-full items-center">
+<a class="text-slate-500 hover:text-primary transition-all font-medium text-sm font-headline pt-2" href="#">Dashboard</a>
+<a class="text-primary border-b-2 border-primary pt-2 pb-4 mt-6 font-medium text-sm font-headline" href="#">Assessments</a>
+<a class="text-slate-500 hover:text-primary transition-all font-medium text-sm font-headline pt-2" href="#">Compliance</a>
+<a class="text-slate-500 hover:text-primary transition-all font-medium text-sm font-headline pt-2" href="#">Strategy</a>
+<a class="text-slate-500 hover:text-primary transition-all font-medium text-sm font-headline pt-2" href="#">Reports</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-500 hover:bg-slate-50 rounded-full p-2 transition-transform duration-200 active:scale-95">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="text-slate-500 hover:bg-slate-50 rounded-full p-2 transition-transform duration-200 active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-slate-500 hover:bg-slate-50 rounded-full p-2 transition-transform duration-200 active:scale-95">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-slate-200 overflow-hidden ml-2 border border-outline-variant/30">
+<img alt="Executive Profile" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFcEyieh_5eyCOlbiJVs0V1JC3GF2ssJlpr1iBpDgthCEtswNnQFx3ZE0VmuWEnWGlr4DKhTV_CW91_tcz7Z5UppvRsd0D1oDZJQl6zdTVGzJgcrNUymj978p0LvN5Hc96F1lopkN1uFPevtWzv3YqMebr9S3VDCiyVRpV8X7Y5Bmge4sA6LsUUqUX5P5jgxfn_FhlrgndNwcWiFNjKqmSiD5bqf_FSOjHAMSNEazEHeu7P44H_t5B7XJIj4T7TmPE6OwlieAMpSI"/>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-4 py-2 rounded-full font-medium text-sm hover:opacity-90 transition-opacity ml-4 shadow-sm">Create Report</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-7xl mx-auto px-6 py-8 md:pt-32 flex flex-col gap-8">
+<!-- Header -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div>
+<h1 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface mb-2">Risk Assessment</h1>
+<p class="text-on-surface-variant text-sm font-body">Six-dimensional risk model, real-time go-global compliance and operational risk monitoring</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-outline-variant/20 text-primary font-medium text-sm bg-surface-container-lowest hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">settings</span>
+                    Monitor Settings
+                </button>
+<button class="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-medium text-sm shadow-[0_8px_16px_rgb(37,99,235,0.2)] hover:shadow-[0_8px_20px_rgb(37,99,235,0.3)] transition-all">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    New Assessment
+                </button>
+</div>
+</header>
+<!-- Metric Row -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0_8px_30px_rgb(25,28,30,0.02)] flex flex-col gap-1 border border-outline-variant/10">
+<span class="text-on-surface-variant text-xs font-semibold uppercase tracking-wider">Overall Score</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-3xl font-bold text-on-surface">68</span>
+<span class="text-amber-600 text-sm font-medium bg-amber-50 px-2 py-0.5 rounded-md">Medium Risk</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0_8px_30px_rgb(25,28,30,0.02)] flex flex-col gap-1 border border-outline-variant/10">
+<span class="text-on-surface-variant text-xs font-semibold uppercase tracking-wider">Active Alerts</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-3xl font-bold text-on-surface">3</span>
+<span class="text-error text-sm font-medium bg-error-container px-2 py-0.5 rounded-md">Require Attention</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0_8px_30px_rgb(25,28,30,0.02)] flex flex-col gap-1 border border-outline-variant/10">
+<span class="text-on-surface-variant text-xs font-semibold uppercase tracking-wider">Risk Change</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-3xl font-bold text-error">+4</span>
+<span class="text-on-surface-variant text-xs">Since last assessment</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0_8px_30px_rgb(25,28,30,0.02)] flex flex-col gap-1 border border-outline-variant/10">
+<span class="text-on-surface-variant text-xs font-semibold uppercase tracking-wider">Dimensions</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-3xl font-bold text-on-surface">6</span>
+<span class="text-on-surface-variant text-xs">Monitored continuously</span>
+</div>
+</div>
+</div>
+<!-- Main Card: Split Layout -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-[0_24px_48px_rgba(25,28,30,0.04)] border border-outline-variant/10 overflow-hidden flex flex-col lg:flex-row">
+<!-- Left Panel -->
+<div class="lg:w-1/3 bg-surface-container-low/50 p-8 flex flex-col justify-center items-start border-r border-outline-variant/10">
+<div class="w-24 h-24 rounded-full border-8 border-amber-400 flex items-center justify-center mb-6 shadow-sm">
+<span class="font-headline text-4xl font-extrabold text-on-surface">68</span>
+</div>
+<div class="inline-flex items-center gap-2 bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-semibold mb-4">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                    Medium Risk
+                </div>
+<p class="text-on-surface-variant text-sm leading-relaxed font-body">
+                    Risk score increased by 4 points due to recent geopolitical shifts and upcoming policy compliances in key operating regions. Immediate attention required for active alerts.
+                </p>
+</div>
+<!-- Right Panel: Progress Bars -->
+<div class="lg:w-2/3 p-8 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+<!-- Dimension 1 -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="text-sm font-semibold text-on-surface">Policy Compliance</span>
+<div class="flex items-center gap-1">
+<span class="text-sm font-bold text-amber-600">68</span>
+<span class="material-symbols-outlined text-[16px] text-amber-600">trending_up</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full rounded-full" style="width: 68%"></div>
+</div>
+</div>
+<!-- Dimension 2 -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="text-sm font-semibold text-on-surface">Data Security</span>
+<div class="flex items-center gap-1">
+<span class="text-sm font-bold text-amber-600">72</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">trending_flat</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full rounded-full" style="width: 72%"></div>
+</div>
+</div>
+<!-- Dimension 3 -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="text-sm font-semibold text-on-surface">ESG Violation</span>
+<div class="flex items-center gap-1">
+<span class="text-sm font-bold text-emerald-600">82</span>
+<span class="material-symbols-outlined text-[16px] text-emerald-600">trending_down</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-emerald-500 h-full rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<!-- Dimension 4 -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="text-sm font-semibold text-on-surface">Geopolitical</span>
+<div class="flex items-center gap-1">
+<span class="text-sm font-bold text-error">45</span>
+<span class="material-symbols-outlined text-[16px] text-error">trending_up</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 45%"></div>
+</div>
+</div>
+<!-- Dimension 5 -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="text-sm font-semibold text-on-surface">Supply Chain</span>
+<div class="flex items-center gap-1">
+<span class="text-sm font-bold text-emerald-600">78</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">trending_flat</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-emerald-500 h-full rounded-full" style="width: 78%"></div>
+</div>
+</div>
+<!-- Dimension 6 -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-end">
+<span class="text-sm font-semibold text-on-surface">Market Competition</span>
+<div class="flex items-center gap-1">
+<span class="text-sm font-bold text-amber-600">65</span>
+<span class="material-symbols-outlined text-[16px] text-amber-600">trending_up</span>
+</div>
+</div>
+<div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full rounded-full" style="width: 65%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Insight Strip -->
+<div class="bg-gradient-to-r from-secondary-container/50 to-primary-fixed/30 rounded-xl p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border border-primary/10 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="bg-primary-container text-white p-2 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<div>
+<span class="text-xs font-bold text-primary uppercase tracking-wider block mb-0.5">AI Risk Insight</span>
+<span class="text-sm font-medium text-on-surface">Geopolitical and policy compliance risks are currently the main drivers of the overall score increase.</span>
+</div>
+</div>
+<button class="shrink-0 bg-white text-primary border border-primary/20 px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary/5 transition-colors shadow-sm">
+                Generate Action Plan
+            </button>
+</div>
+<!-- Risk Events Section -->
+<section class="mt-4 flex flex-col gap-6">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<h2 class="font-headline text-2xl font-bold text-on-surface">Active Risk Events</h2>
+<div class="flex flex-wrap items-center gap-3">
+<div class="flex gap-2 bg-surface-container-low p-1 rounded-full border border-outline-variant/20">
+<button class="bg-surface-container-lowest text-on-surface shadow-sm px-4 py-1.5 rounded-full text-xs font-semibold">All</button>
+<button class="text-on-surface-variant hover:text-on-surface px-4 py-1.5 rounded-full text-xs font-medium transition-colors">High</button>
+<button class="text-on-surface-variant hover:text-on-surface px-4 py-1.5 rounded-full text-xs font-medium transition-colors">Medium</button>
+<button class="text-on-surface-variant hover:text-on-surface px-4 py-1.5 rounded-full text-xs font-medium transition-colors">Low</button>
+</div>
+<button class="flex items-center gap-1 text-sm font-medium text-on-surface-variant border border-outline-variant/20 px-3 py-1.5 rounded-lg hover:bg-surface-container-low transition-colors bg-surface-container-lowest">
+                        Sort by: Severity
+                        <span class="material-symbols-outlined text-[18px]">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- Event Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_12px_24px_rgba(25,28,30,0.03)] border border-outline-variant/10 flex flex-col gap-5 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>
+<div class="flex flex-col md:flex-row justify-between items-start gap-4">
+<div class="flex items-start gap-3">
+<div class="mt-1 w-3 h-3 rounded-full bg-error shadow-[0_0_8px_rgba(186,26,26,0.6)]"></div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-1">EU AI Act High-Risk AI System Classification</h3>
+<div class="flex flex-wrap gap-2 text-xs font-medium">
+<span class="bg-error/10 text-error px-2 py-1 rounded">High Risk</span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-1 rounded border border-outline-variant/10">Monitoring</span>
+<span class="bg-error text-white px-2 py-1 rounded shadow-sm">Urgent</span>
+<span class="text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 2 hours ago</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-low rounded-lg p-4 border border-outline-variant/10">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-[16px]">warning</span> Potential Impact
+                        </span>
+<p class="text-sm text-on-surface">Failure to comply may result in fines up to €35M or 7% of global turnover. Affects core AI products in European market.</p>
+</div>
+<div class="bg-primary/5 rounded-lg p-4 border border-primary/10">
+<span class="text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-[16px]">lightbulb</span> Suggested Action
+                        </span>
+<p class="text-sm text-on-surface">Start EU AI Act compliance gap analysis for 'Predictive Model V3'. Register in EU database.</p>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-2 border-t border-surface-container">
+<button class="flex items-center gap-1 text-sm font-medium text-primary hover:bg-primary/5 px-3 py-1.5 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]">forum</span> Ask AI
+                    </button>
+<button class="bg-on-surface text-white px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-inverse-surface transition-colors shadow-sm">
+                        Create Task
+                    </button>
+</div>
+</div>
+<!-- Event Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_12px_24px_rgba(25,28,30,0.03)] border border-outline-variant/10 flex flex-col gap-5 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>
+<div class="flex flex-col md:flex-row justify-between items-start gap-4">
+<div class="flex items-start gap-3">
+<div class="mt-1 w-3 h-3 rounded-full bg-error"></div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-1">US AI Chip Export Control Expansion</h3>
+<div class="flex flex-wrap gap-2 text-xs font-medium">
+<span class="bg-error/10 text-error px-2 py-1 rounded">High Risk</span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-1 rounded border border-outline-variant/10">Monitoring</span>
+<span class="text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 1 day ago</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-low rounded-lg p-4 border border-outline-variant/10">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-[16px]">warning</span> Potential Impact
+                        </span>
+<p class="text-sm text-on-surface">May affect AI model deployment timelines in APAC data centers due to supply chain restrictions on advanced GPUs.</p>
+</div>
+<div class="bg-primary/5 rounded-lg p-4 border border-primary/10">
+<span class="text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-[16px]">lightbulb</span> Suggested Action
+                        </span>
+<p class="text-sm text-on-surface">Assess computing supply chain exposure. Identify alternative cloud providers or hardware sources in compliant regions.</p>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-2 border-t border-surface-container">
+<button class="flex items-center gap-1 text-sm font-medium text-primary hover:bg-primary/5 px-3 py-1.5 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]">forum</span> Ask AI
+                    </button>
+<button class="border border-outline-variant/30 text-on-surface px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-surface-container-low transition-colors">
+                        Add to Watchlist
+                    </button>
+</div>
+</div>
+<!-- Event Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0_12px_24px_rgba(25,28,30,0.03)] border border-outline-variant/10 flex flex-col gap-5 relative overflow-hidden group">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-amber-500"></div>
+<div class="flex flex-col md:flex-row justify-between items-start gap-4">
+<div class="flex items-start gap-3">
+<div class="mt-1 w-3 h-3 rounded-full bg-amber-500"></div>
+<div>
+<h3 class="font-headline text-lg font-bold text-on-surface mb-1">Singapore PDPA Amendment Draft</h3>
+<div class="flex flex-wrap gap-2 text-xs font-medium">
+<span class="bg-amber-100 text-amber-800 px-2 py-1 rounded">Medium Risk</span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-1 rounded border border-outline-variant/10">Watch</span>
+<span class="text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span> 3 days ago</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-low rounded-lg p-4 border border-outline-variant/10">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-[16px]">warning</span> Potential Impact
+                        </span>
+<p class="text-sm text-on-surface">May increase compliance costs for regional data processing hub. Stricter consent requirements for AI training data.</p>
+</div>
+<div class="bg-primary/5 rounded-lg p-4 border border-primary/10">
+<span class="text-xs font-bold text-primary uppercase tracking-wider flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-[16px]">lightbulb</span> Suggested Action
+                        </span>
+<p class="text-sm text-on-surface">Monitor legislative progress. Review current consent protocols for SEA user data.</p>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-2 border-t border-surface-container">
+<button class="flex items-center gap-1 text-sm font-medium text-primary hover:bg-primary/5 px-3 py-1.5 rounded-lg transition-colors">
+<span class="material-symbols-outlined text-[18px]">forum</span> Ask AI
+                    </button>
+<button class="border border-outline-variant/30 text-on-surface px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-surface-container-low transition-colors">
+                        Add to Watchlist
+                    </button>
+</div>
+</div>
+</section>
+</main>
+</body></html>

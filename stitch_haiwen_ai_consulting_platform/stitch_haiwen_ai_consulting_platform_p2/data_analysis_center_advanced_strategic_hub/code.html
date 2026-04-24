@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HQ Haiwen - Data Analysis Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-primary-fixed-variant": "#003ea8",
+                  "on-secondary-container": "#57657b",
+                  "on-error-container": "#93000a",
+                  "background": "#f7f9fb",
+                  "tertiary-container": "#bc4800",
+                  "on-background": "#191c1e",
+                  "on-surface": "#191c1e",
+                  "secondary-container": "#d5e3fd",
+                  "on-primary-fixed": "#00174b",
+                  "primary-fixed": "#dbe1ff",
+                  "on-tertiary": "#ffffff",
+                  "secondary-fixed": "#d5e3fd",
+                  "surface-bright": "#f7f9fb",
+                  "error": "#ba1a1a",
+                  "tertiary-fixed": "#ffdbcd",
+                  "secondary": "#515f74",
+                  "on-surface-variant": "#434655",
+                  "inverse-primary": "#b4c5ff",
+                  "outline": "#737686",
+                  "surface-container": "#eceef0",
+                  "surface-tint": "#0053db",
+                  "on-tertiary-container": "#ffede6",
+                  "inverse-surface": "#2d3133",
+                  "inverse-on-surface": "#eff1f3",
+                  "primary-fixed-dim": "#b4c5ff",
+                  "on-primary-container": "#eeefff",
+                  "on-secondary-fixed-variant": "#3a485c",
+                  "surface-container-low": "#f2f4f6",
+                  "outline-variant": "#c3c6d7",
+                  "surface": "#f7f9fb",
+                  "on-error": "#ffffff",
+                  "tertiary-fixed-dim": "#ffb596",
+                  "on-secondary": "#ffffff",
+                  "surface-variant": "#e0e3e5",
+                  "surface-dim": "#d8dadc",
+                  "on-secondary-fixed": "#0d1c2f",
+                  "surface-container-lowest": "#ffffff",
+                  "primary-container": "#2563eb",
+                  "error-container": "#ffdad6",
+                  "surface-container-high": "#e6e8ea",
+                  "on-tertiary-fixed-variant": "#7d2d00",
+                  "primary": "#004ac6",
+                  "secondary-fixed-dim": "#b9c7e0",
+                  "on-tertiary-fixed": "#360f00",
+                  "tertiary": "#943700",
+                  "surface-container-highest": "#e0e3e5",
+                  "on-primary": "#ffffff"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {},
+          "fontFamily": {
+                  "headline": [
+                          "Manrope"
+                  ],
+                  "display": [
+                          "Manrope"
+                  ],
+                  "body": [
+                          "Inter"
+                  ],
+                  "label": [
+                          "Inter"
+                  ]
+          },
+          "fontSize": {}
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: theme('colors.background');
+      color: theme('colors.on-background');
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, h4, h5, h6, .font-headline, .font-display {
+      font-family: 'Manrope', sans-serif;
+    }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .material-symbols-outlined.filled {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .ghost-border {
+      border: 1px solid theme('colors.outline-variant' / 20%);
+    }
+    .ambient-shadow {
+      box-shadow: 0px 24px 48px rgba(25, 28, 30, 0.06);
+    }
+    .gradient-primary {
+      background: linear-gradient(135deg, theme('colors.primary'), theme('colors.primary-container'));
+    }
+  </style>
+</head>
+<body class="min-h-screen antialiased flex flex-col md:flex-row">
+<!-- SideNavBar component -->
+<nav aria-label="Sidebar Navigation" class="h-screen w-64 fixed left-0 top-16 bg-[#f2f4f6] dark:bg-slate-950 flex flex-col p-4 gap-2 z-40 md:flex hidden">
+<div class="hidden mb-8 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline font-bold">HQ</div>
+<div>
+<div class="font-headline font-bold text-on-surface">Enterprise Shell</div>
+<div class="font-body text-xs text-on-surface-variant">Strategic Portal</div>
+</div>
+</div>
+</div>
+<a class="text-[#434655] dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-900/50 rounded-lg flex items-center gap-3 px-4 py-3 font-['Inter'] text-sm hover:translate-x-1 transition-transform ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined">space_dashboard</span>
+      Workspace
+    </a>
+<a class="text-[#434655] dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-900/50 rounded-lg flex items-center gap-3 px-4 py-3 font-['Inter'] text-sm hover:translate-x-1 transition-transform ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined">gavel</span>
+      Compliance Tools
+    </a>
+<a class="text-[#434655] dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-900/50 rounded-lg flex items-center gap-3 px-4 py-3 font-['Inter'] text-sm hover:translate-x-1 transition-transform ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined">language</span>
+      Go-Global Management
+    </a>
+<a class="bg-white dark:bg-slate-900 text-[#004ac6] font-semibold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 font-['Inter'] text-sm hover:translate-x-1 transition-transform ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined filled">account_tree</span>
+      Resource Ecosystem
+    </a>
+</nav>
+<!-- TopNavBar component -->
+<header class="fixed top-0 w-full z-50 bg-[#f7f9fb]/80 dark:bg-slate-900/80 backdrop-blur-md bg-transparent shadow-none">
+<div class="flex justify-between items-center px-8 h-16 w-full max-w-[1600px] mx-auto">
+<div class="flex items-center gap-8">
+<a class="text-xl font-bold tracking-tighter text-[#191c1e] dark:text-white font-['Manrope'] tracking-tight" href="#">HQ Haiwen</a>
+<nav aria-label="Top Navigation" class="hidden md:flex items-center gap-6">
+<a class="text-[#434655] dark:text-slate-400 hover:text-[#004ac6] transition-colors font-['Manrope'] tracking-tight text-sm hover:bg-[#f2f4f6]/50 dark:hover:bg-slate-800 transition-all px-3 py-2 rounded-md scale-95 duration-200" href="#">Dashboard</a>
+<a class="text-[#434655] dark:text-slate-400 hover:text-[#004ac6] transition-colors font-['Manrope'] tracking-tight text-sm hover:bg-[#f2f4f6]/50 dark:hover:bg-slate-800 transition-all px-3 py-2 rounded-md scale-95 duration-200" href="#">AI Chat</a>
+<a class="text-[#434655] dark:text-slate-400 hover:text-[#004ac6] transition-colors font-['Manrope'] tracking-tight text-sm hover:bg-[#f2f4f6]/50 dark:hover:bg-slate-800 transition-all px-3 py-2 rounded-md scale-95 duration-200" href="#">Policy DB</a>
+<a class="text-[#434655] dark:text-slate-400 hover:text-[#004ac6] transition-colors font-['Manrope'] tracking-tight text-sm hover:bg-[#f2f4f6]/50 dark:hover:bg-slate-800 transition-all px-3 py-2 rounded-md scale-95 duration-200" href="#">Cases</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#004ac6] dark:text-blue-400 hover:bg-[#f2f4f6]/50 dark:hover:bg-slate-800 transition-all p-2 rounded-full scale-95 duration-200">
+<span class="material-symbols-outlined">language</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/20 cursor-pointer">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_K8Hrs3trJUSGOjDbJbvv72D4-h0I3h0XD0ztsR90VkwJ5sgRMmFj0kG143GLbLNkl4X4sgbo0K3OBYEqKcHnwF0K0Zw_cmdmxelfkY4ZYpgKDsqQsvgFrTqLvOlq_yVUDF32y0MA32tHGc7AEl0fuNTaEJexNDoZzmyIObrnbrJ8WkJrD6yljqCMc7jI-uAuXBqQkjAduI4Ri4nIpGNvi0VA-YEnqSwGVRyp00Ow8fEgR4rCf0I0P1vi76txH2AN_cjTX6Qe9Lo"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 md:ml-64 mt-16 p-8 lg:p-12 max-w-[1600px] mx-auto w-full flex flex-col gap-12">
+<!-- Header Section -->
+<section class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+<div class="flex-1">
+<h1 class="font-display text-4xl lg:text-5xl font-extrabold text-on-surface tracking-tight mb-2">Data Analysis Center</h1>
+<p class="font-body text-on-surface-variant text-sm uppercase tracking-widest">Panoramic data insights for enterprise compliance management</p>
+</div>
+<div class="flex flex-wrap items-center gap-4">
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest ghost-border rounded-md px-4 py-2 pr-10 text-sm font-medium text-on-surface focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary cursor-pointer">
+<option>Last 3 months</option>
+<option>Last 6 months</option>
+<option>This Year</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-sm">expand_more</span>
+</div>
+<button class="px-5 py-2 rounded-md border border-outline-variant/20 text-primary font-medium text-sm hover:bg-surface-container-low transition-colors">
+          Export Report
+        </button>
+<button class="px-5 py-2 rounded-md gradient-primary text-on-primary font-medium text-sm hover:opacity-90 transition-opacity flex items-center gap-2 ambient-shadow">
+<span class="material-symbols-outlined text-sm">insights</span>
+          Generate Insight
+        </button>
+</div>
+</section>
+<!-- KPI Row -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+<!-- KPI 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 ghost-border flex flex-col gap-4 transition-transform hover:-translate-y-1 duration-300">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">gavel</span>
+</div>
+<span class="text-xs font-semibold text-surface-tint flex items-center gap-1 bg-primary-fixed px-2 py-1 rounded-sm">
+<span class="material-symbols-outlined text-xs">trending_up</span> +12 vs last month
+          </span>
+</div>
+<div>
+<div class="font-display text-3xl font-bold text-on-surface">47</div>
+<div class="font-body text-sm text-on-surface-variant mt-1">Compliance Actions This Month</div>
+</div>
+<div class="text-xs text-on-surface-variant bg-surface p-3 rounded-md border border-outline-variant/10 leading-relaxed">
+          Action volume increased after EU AI Act monitoring
+        </div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 ghost-border flex flex-col gap-4 transition-transform hover:-translate-y-1 duration-300">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-full bg-[#f3e8ff] flex items-center justify-center text-[#9333ea]">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<span class="text-xs font-semibold text-[#9333ea] flex items-center gap-1 bg-[#faf5ff] px-2 py-1 rounded-sm border border-[#e9d5ff]">
+<span class="material-symbols-outlined text-xs">trending_up</span> +23 vs last month
+          </span>
+</div>
+<div>
+<div class="font-display text-3xl font-bold text-on-surface">128</div>
+<div class="font-body text-sm text-on-surface-variant mt-1">Total AI Consultations</div>
+</div>
+<div class="text-xs text-on-surface-variant bg-surface p-3 rounded-md border border-outline-variant/10 leading-relaxed">
+          GDPR and AI Act topics are most frequent
+        </div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 ghost-border flex flex-col gap-4 transition-transform hover:-translate-y-1 duration-300">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-full bg-[#dcfce7] flex items-center justify-center text-[#16a34a]">
+<span class="material-symbols-outlined">task_alt</span>
+</div>
+<span class="text-xs font-semibold text-[#16a34a] flex items-center gap-1 bg-[#f0fdf4] px-2 py-1 rounded-sm border border-[#bbf7d0]">
+<span class="material-symbols-outlined text-xs">trending_up</span> +5% vs last month
+          </span>
+</div>
+<div>
+<div class="font-display text-3xl font-bold text-on-surface">76%</div>
+<div class="font-body text-sm text-on-surface-variant mt-1">Risk Event Resolution Rate</div>
+</div>
+<div class="text-xs text-on-surface-variant bg-surface p-3 rounded-md border border-outline-variant/10 leading-relaxed">
+          Resolution efficiency improved
+        </div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 ghost-border flex flex-col gap-4 transition-transform hover:-translate-y-1 duration-300">
+<div class="flex items-center justify-between">
+<div class="w-10 h-10 rounded-full bg-[#ffedd5] flex items-center justify-center text-[#ea580c]">
+<span class="material-symbols-outlined">timer</span>
+</div>
+<span class="text-xs font-semibold text-[#ea580c] flex items-center gap-1 bg-[#fff7ed] px-2 py-1 rounded-sm border border-[#fed7aa]">
+<span class="material-symbols-outlined text-xs">trending_down</span> -0.3 days vs last month
+          </span>
+</div>
+<div>
+<div class="font-display text-3xl font-bold text-on-surface">1.2 days</div>
+<div class="font-body text-sm text-on-surface-variant mt-1">Avg. Response Time</div>
+</div>
+<div class="text-xs text-on-surface-variant bg-surface p-3 rounded-md border border-outline-variant/10 leading-relaxed">
+          AI-assisted workflows shortened response time
+        </div>
+</div>
+</section>
+<!-- AI Data Insight Panel -->
+<section class="bg-primary-fixed/30 rounded-xl p-8 ghost-border relative overflow-hidden flex flex-col md:flex-row items-start md:items-center gap-6">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 z-10 ambient-shadow">
+<span class="material-symbols-outlined">smart_toy</span>
+</div>
+<div class="flex-1 z-10">
+<h3 class="font-display text-lg font-bold text-on-surface mb-2">AI Data Insight</h3>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed max-w-4xl">
+          Compliance readiness has improved continuously over the last 6 months, but geopolitical and policy compliance risks still require attention. EU AI Act preparation and US AI chip export control monitoring should remain priority areas.
+        </p>
+</div>
+<button class="shrink-0 text-primary font-medium text-sm flex items-center gap-1 hover:underline z-10">
+        View Recommended Actions <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</section>
+<!-- Analytics Grid (2 columns) -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Card 1: Compliance Score Trend -->
+<div class="bg-surface-container-lowest rounded-xl p-8 ghost-border flex flex-col h-full">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="font-display text-xl font-bold text-on-surface">Compliance Score Trend</h3>
+<p class="font-body text-xs text-on-surface-variant mt-1">6-Month historical view</p>
+</div>
+<span class="text-xs font-semibold text-[#16a34a] bg-[#f0fdf4] px-3 py-1.5 rounded-full border border-[#bbf7d0]">
+            +16 points over 6 months
+          </span>
+</div>
+<div class="flex-1 flex items-end justify-between gap-2 mt-auto h-48 relative border-b border-outline-variant/20 pb-4">
+<!-- Bars -->
+<div class="w-1/6 flex flex-col items-center gap-2 group">
+<div class="text-xs font-medium text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">58</div>
+<div class="w-full max-w-[40px] bg-primary/20 rounded-t-sm h-[58%] group-hover:bg-primary/40 transition-colors"></div>
+<div class="text-xs text-on-surface-variant mt-2">Jul</div>
+</div>
+<div class="w-1/6 flex flex-col items-center gap-2 group">
+<div class="text-xs font-medium text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">61</div>
+<div class="w-full max-w-[40px] bg-primary/30 rounded-t-sm h-[61%] group-hover:bg-primary/50 transition-colors"></div>
+<div class="text-xs text-on-surface-variant mt-2">Aug</div>
+</div>
+<div class="w-1/6 flex flex-col items-center gap-2 group">
+<div class="text-xs font-medium text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">64</div>
+<div class="w-full max-w-[40px] bg-primary/40 rounded-t-sm h-[64%] group-hover:bg-primary/60 transition-colors"></div>
+<div class="text-xs text-on-surface-variant mt-2">Sep</div>
+</div>
+<div class="w-1/6 flex flex-col items-center gap-2 group">
+<div class="text-xs font-medium text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">68</div>
+<div class="w-full max-w-[40px] bg-primary/60 rounded-t-sm h-[68%] group-hover:bg-primary/80 transition-colors"></div>
+<div class="text-xs text-on-surface-variant mt-2">Oct</div>
+</div>
+<div class="w-1/6 flex flex-col items-center gap-2 group">
+<div class="text-xs font-medium text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">71</div>
+<div class="w-full max-w-[40px] bg-primary/80 rounded-t-sm h-[71%] group-hover:bg-primary transition-colors"></div>
+<div class="text-xs text-on-surface-variant mt-2">Nov</div>
+</div>
+<div class="w-1/6 flex flex-col items-center gap-2 group">
+<div class="text-xs font-medium text-on-surface-variant opacity-100">74</div>
+<div class="w-full max-w-[40px] gradient-primary rounded-t-sm h-[74%] ambient-shadow"></div>
+<div class="text-xs font-semibold text-primary mt-2">Dec</div>
+</div>
+</div>
+<div class="mt-6 flex items-start gap-3 bg-surface p-4 rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-surface-tint shrink-0 text-xl">info</span>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+            Continuous improvement driven by diagnosis completion and ESG data updates
+          </p>
+</div>
+</div>
+<!-- Card 2: Risk Event Trend -->
+<div class="bg-surface-container-lowest rounded-xl p-8 ghost-border flex flex-col h-full">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="font-display text-xl font-bold text-on-surface">Risk Event Trend</h3>
+<p class="font-body text-xs text-on-surface-variant mt-1">Q4 Distribution by Severity</p>
+</div>
+<div class="flex items-center gap-4 text-xs text-on-surface-variant">
+<div class="flex items-center gap-1.5"><div class="w-2.5 h-2.5 rounded-full bg-[#ef4444]"></div>High</div>
+<div class="flex items-center gap-1.5"><div class="w-2.5 h-2.5 rounded-full bg-[#f97316]"></div>Med</div>
+<div class="flex items-center gap-1.5"><div class="w-2.5 h-2.5 rounded-full bg-[#22c55e]"></div>Low</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-center gap-6 mt-4">
+<!-- Oct -->
+<div class="flex items-center gap-4">
+<div class="w-10 text-sm font-medium text-on-surface-variant text-right">Oct</div>
+<div class="flex-1 h-6 flex rounded-full overflow-hidden bg-surface">
+<div class="bg-[#ef4444] h-full" style="width: 35%"></div>
+<div class="bg-[#f97316] h-full" style="width: 45%"></div>
+<div class="bg-[#22c55e] h-full" style="width: 20%"></div>
+</div>
+<div class="w-10 text-xs text-on-surface-variant">42</div>
+</div>
+<!-- Nov -->
+<div class="flex items-center gap-4">
+<div class="w-10 text-sm font-medium text-on-surface-variant text-right">Nov</div>
+<div class="flex-1 h-6 flex rounded-full overflow-hidden bg-surface">
+<div class="bg-[#ef4444] h-full" style="width: 25%"></div>
+<div class="bg-[#f97316] h-full" style="width: 40%"></div>
+<div class="bg-[#22c55e] h-full" style="width: 35%"></div>
+</div>
+<div class="w-10 text-xs text-on-surface-variant">38</div>
+</div>
+<!-- Dec -->
+<div class="flex items-center gap-4">
+<div class="w-10 text-sm font-semibold text-on-surface text-right">Dec</div>
+<div class="flex-1 h-6 flex rounded-full overflow-hidden bg-surface">
+<div class="bg-[#ef4444] h-full" style="width: 15%"></div>
+<div class="bg-[#f97316] h-full" style="width: 30%"></div>
+<div class="bg-[#22c55e] h-full" style="width: 55%"></div>
+</div>
+<div class="w-10 text-xs font-medium text-on-surface">45</div>
+</div>
+</div>
+<div class="mt-8 flex items-start gap-3 bg-secondary-container/30 p-4 rounded-lg border border-secondary-container">
+<span class="material-symbols-outlined text-secondary-fixed-variant shrink-0 text-xl">lightbulb</span>
+<p class="text-xs text-on-secondary-container leading-relaxed font-medium">
+            High-risk events decreased in December, while low-risk monitoring items increased
+          </p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer component -->
+<footer class="w-full py-12 bg-[#191c1e] dark:bg-black mt-auto md:ml-64 w-[calc(100%-16rem)] border-t border-outline-variant/10">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-[1600px] mx-auto gap-6">
+<div class="text-blue-400 font-bold font-['Inter'] text-xs uppercase tracking-widest opacity-80 hover:opacity-100 transition-opacity">
+        HQ Haiwen Global Architect
+      </div>
+<div class="flex gap-6 font-['Inter'] text-xs uppercase tracking-widest text-slate-500">
+<a class="hover:text-blue-300 transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-blue-300 transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-blue-300 transition-colors" href="#">Security</a>
+<a class="hover:text-blue-300 transition-colors" href="#">Contact</a>
+</div>
+<div class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 text-center md:text-right">
+        © 2024 HQ Haiwen Global Architect. All rights reserved.
+      </div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Compliance Solution Toolbox - HQ Haiwen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#004ac6",
+                      "secondary-container": "#d5e3fd",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "outline-variant": "#c3c6d7",
+                      "on-tertiary-container": "#ffede6",
+                      "on-surface": "#191c1e",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "secondary-fixed-dim": "#b9c7e0",
+                      "on-background": "#191c1e",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "on-error": "#ffffff",
+                      "surface-container-low": "#f2f4f6",
+                      "surface-container": "#eceef0",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "tertiary-fixed": "#ffdbcd",
+                      "surface-container-highest": "#e0e3e5",
+                      "secondary": "#515f74",
+                      "primary-fixed": "#dbe1ff",
+                      "on-surface-variant": "#434655",
+                      "surface-variant": "#e0e3e5",
+                      "inverse-on-surface": "#eff1f3",
+                      "surface-dim": "#d8dadc",
+                      "on-secondary-container": "#57657b",
+                      "surface-container-high": "#e6e8ea",
+                      "surface": "#f7f9fb",
+                      "secondary-fixed": "#d5e3fd",
+                      "on-secondary-fixed-variant": "#3a485c",
+                      "surface-bright": "#f7f9fb",
+                      "background": "#f7f9fb",
+                      "on-error-container": "#93000a",
+                      "tertiary": "#943700",
+                      "on-primary-fixed": "#00174b",
+                      "tertiary-container": "#bc4800",
+                      "primary-container": "#2563eb",
+                      "inverse-surface": "#2d3133",
+                      "on-primary-container": "#eeefff",
+                      "on-tertiary-fixed": "#360f00",
+                      "on-primary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "outline": "#737686",
+                      "inverse-primary": "#b4c5ff",
+                      "on-secondary-fixed": "#0d1c2f",
+                      "error": "#ba1a1a",
+                      "surface-tint": "#0053db",
+                      "on-primary-fixed-variant": "#003ea8"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Manrope"
+                      ],
+                      "display": [
+                              "Manrope"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {}
+      },
+          },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 h-16 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center px-8 w-full max-w-[1920px] mx-auto h-full">
+<div class="flex items-center gap-8">
+<div class="text-xl font-extrabold tracking-tighter text-blue-700 dark:text-blue-400 font-['Manrope'] tracking-tight">HQ Haiwen</div>
+<div class="hidden md:flex gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-all font-['Manrope'] tracking-tight" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-all font-['Manrope'] tracking-tight" href="#">AI Chat</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-all font-['Manrope'] tracking-tight" href="#">Policy DB</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-600 dark:hover:text-blue-300 transition-all font-['Manrope'] tracking-tight" href="#">Cases</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<img alt="User profile photo" class="w-8 h-8 rounded-full border border-outline-variant/20 object-cover" data-alt="professional headshot of a businessperson in a modern office setting, soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeEE6kZnY9WBczT7j4-N2vOMu0MxmwRe5nehXlvBg4li8Qw9wOYCYI75gMKRxDz9zkIT1HFR-I1tOgNinDyXc0xh28kOJ4galr9g9crmKMk8n8pl0trJKdO5SkXAh6jVJFdUmSYUZHCLrCYwi7kpPxGj9MSkGawJWWOdDYR11myZR0nhu9O2ndJmlEsUnRKg7Z-46af7Xdtc2EZgP7nmp8iyxYOqP89SbD-90GKRxrQGDxSfnyejnT4PChHtUnu-D4ONUYTxhx_-A"/>
+</div>
+</div>
+</nav>
+<div class="flex flex-1 pt-16">
+<!-- SideNavBar -->
+<aside class="w-72 h-[calc(100vh-4rem)] sticky top-16 bg-slate-50 dark:bg-slate-950 flex flex-col gap-2 p-4 border-r border-slate-200/50 dark:border-slate-800/50 hidden md:flex">
+<div class="mb-8 px-4">
+<h2 class="font-bold text-slate-900 dark:text-white font-['Inter'] text-sm uppercase tracking-wider mb-1">Solution Toolbox</h2>
+<p class="text-xs text-on-surface-variant">Enterprise Suite</p>
+</div>
+<nav class="flex flex-col gap-2 flex-1 font-['Inter'] text-sm">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="space_dashboard">space_dashboard</span>
+<span>Workspace</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-400 shadow-sm rounded-lg font-semibold transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="verified_user">verified_user</span>
+<span>Compliance Tools</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="language">language</span>
+<span>Go-Global Management</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 rounded-lg transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="hub">hub</span>
+<span>Resource Ecosystem</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8 lg:p-12 bg-surface">
+<div class="max-w-6xl mx-auto space-y-12">
+<!-- Header -->
+<header class="space-y-4">
+<h1 class="text-[3.5rem] leading-none font-extrabold tracking-tight font-headline text-on-surface">Compliance Solution Toolbox</h1>
+<p class="text-[0.875rem] font-medium text-on-surface-variant max-w-2xl uppercase tracking-widest">From diagnosis to implementation — AI-driven full-cycle compliance solution toolkit</p>
+</header>
+<!-- Toolbox Feature Grid -->
+<section>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Active Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/20 shadow-[0_24px_48px_rgba(25,28,30,0.02)] hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)] transition-all duration-300 flex flex-col h-full group cursor-pointer relative overflow-hidden">
+<div class="w-12 h-12 rounded-lg bg-blue-50 flex items-center justify-center text-primary mb-6">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3 text-on-surface">Compliance Implementation Plan</h3>
+<p class="text-sm text-on-surface-variant flex-1 mb-6">Auto-generate comprehensive implementation plans tailored to your specific jurisdictional requirements.</p>
+<div class="flex items-center text-primary font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                                Use Now <span class="material-symbols-outlined ml-1 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Active Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/20 shadow-[0_24px_48px_rgba(25,28,30,0.02)] hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)] transition-all duration-300 flex flex-col h-full group cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 mb-6">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3 text-on-surface">Overseas Compliance Contract Templates</h3>
+<p class="text-sm text-on-surface-variant flex-1 mb-6">Access a repository of 200+ standardized contract templates for international operations.</p>
+<div class="flex items-center text-primary font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                                Use Now <span class="material-symbols-outlined ml-1 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Active Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/20 shadow-[0_24px_48px_rgba(25,28,30,0.02)] hover:shadow-[0_24px_48px_rgba(25,28,30,0.06)] transition-all duration-300 flex flex-col h-full group cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-purple-50 flex items-center justify-center text-purple-600 mb-6">
+<span class="material-symbols-outlined" data-icon="notifications_active">notifications_active</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3 text-on-surface">Policy Change Monitor</h3>
+<p class="text-sm text-on-surface-variant flex-1 mb-6">Real-time tracking and alerts for regulatory changes across global target markets.</p>
+<div class="flex items-center text-primary font-semibold text-sm group-hover:translate-x-1 transition-transform">
+                                Use Now <span class="material-symbols-outlined ml-1 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Disabled Card 4 -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/10 opacity-50 flex flex-col h-full relative">
+<div class="absolute top-6 right-6 bg-surface-variant text-on-surface-variant text-xs px-2 py-1 rounded font-medium">Coming Soon</div>
+<div class="w-12 h-12 rounded-lg bg-slate-200 flex items-center justify-center text-slate-500 mb-6">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3 text-on-surface">Overseas Entity Registration Guide</h3>
+<p class="text-sm text-on-surface-variant flex-1 mb-6">Step-by-step documentation for establishing corporate entities abroad.</p>
+</div>
+<!-- Disabled Card 5 -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/10 opacity-50 flex flex-col h-full relative">
+<div class="absolute top-6 right-6 bg-surface-variant text-on-surface-variant text-xs px-2 py-1 rounded font-medium">Coming Soon</div>
+<div class="w-12 h-12 rounded-lg bg-slate-200 flex items-center justify-center text-slate-500 mb-6">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3 text-on-surface">IP Protection Solutions</h3>
+<p class="text-sm text-on-surface-variant flex-1 mb-6">Strategic frameworks for safeguarding intellectual property in new markets.</p>
+</div>
+<!-- Disabled Card 6 -->
+<div class="bg-surface-container-low rounded-xl p-6 border border-outline-variant/10 opacity-50 flex flex-col h-full relative">
+<div class="absolute top-6 right-6 bg-surface-variant text-on-surface-variant text-xs px-2 py-1 rounded font-medium">Coming Soon</div>
+<div class="w-12 h-12 rounded-lg bg-slate-200 flex items-center justify-center text-slate-500 mb-6">
+<span class="material-symbols-outlined" data-icon="public">public</span>
+</div>
+<h3 class="text-xl font-bold font-headline mb-3 text-on-surface">ESG Improvement Action Plan</h3>
+<p class="text-sm text-on-surface-variant flex-1 mb-6">Diagnostic tools and roadmaps for enhancing corporate sustainability metrics.</p>
+</div>
+</div>
+</section>
+<!-- My Compliance Plans Section -->
+<section class="bg-surface-container-lowest rounded-2xl p-8 border border-outline-variant/20 shadow-[0_24px_48px_rgba(25,28,30,0.04)]">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-2xl font-bold font-headline text-on-surface">My Compliance Plans</h2>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span> Generate New Plan
+                        </button>
+</div>
+<div class="space-y-4">
+<!-- Plan 1 -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between p-5 bg-surface rounded-xl border border-outline-variant/10 gap-6">
+<div class="flex-1">
+<h4 class="text-lg font-semibold text-on-surface mb-1">EU AI Act Compliance Remediation Plan</h4>
+<p class="text-xs text-on-surface-variant">Created: 2024-11-15</p>
+</div>
+<div class="w-full lg:w-1/3 flex flex-col gap-2">
+<div class="flex justify-between text-xs font-medium text-on-surface-variant">
+<span>Progress</span>
+<span>4/12 tasks done</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full" style="width: 35%"></div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 text-sm font-medium text-primary bg-primary/5 hover:bg-primary/10 rounded-lg transition-colors border border-primary/20">View Plan</button>
+<button class="px-4 py-2 text-sm font-medium text-on-surface bg-surface-container-highest hover:bg-surface-variant rounded-lg transition-colors flex items-center gap-2 border border-outline-variant/20">
+<span class="material-symbols-outlined text-sm" data-icon="smart_toy">smart_toy</span> Ask AI
+                                </button>
+</div>
+</div>
+<!-- Plan 2 -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between p-5 bg-surface rounded-xl border border-outline-variant/10 gap-6">
+<div class="flex-1">
+<h4 class="text-lg font-semibold text-on-surface mb-1">GDPR Data Compliance Implementation Plan</h4>
+<p class="text-xs text-on-surface-variant">Created: 2024-10-28</p>
+</div>
+<div class="w-full lg:w-1/3 flex flex-col gap-2">
+<div class="flex justify-between text-xs font-medium text-on-surface-variant">
+<span>Progress</span>
+<span>5/8 tasks done</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5">
+<div class="bg-primary h-1.5 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 text-sm font-medium text-primary bg-primary/5 hover:bg-primary/10 rounded-lg transition-colors border border-primary/20">View Plan</button>
+<button class="px-4 py-2 text-sm font-medium text-on-surface bg-surface-container-highest hover:bg-surface-variant rounded-lg transition-colors flex items-center gap-2 border border-outline-variant/20">
+<span class="material-symbols-outlined text-sm" data-icon="smart_toy">smart_toy</span> Ask AI
+                                </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-slate-900 dark:bg-black text-white w-full py-12 px-12 mt-auto border-t-0 shadow-none relative z-10">
+<div class="max-w-[1920px] mx-auto flex flex-col md:flex-row justify-between items-start gap-12 font-['Inter'] text-xs tracking-widest">
+<div class="flex flex-col gap-4 max-w-xs">
+<div class="text-white font-bold text-lg font-headline tracking-tight uppercase">HQ Haiwen</div>
+<p class="text-slate-400 normal-case tracking-normal">Empowering global enterprise compliance through AI-driven intelligence and strategic foresight.</p>
+<div class="mt-4 text-slate-500 uppercase">
+                    © 2024 HQ Haiwen Strategic Consulting. All rights reserved.
+                </div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12 w-full md:w-auto">
+<div class="flex flex-col gap-3">
+<h5 class="font-bold text-white mb-2">Products</h5>
+<a class="text-slate-400 hover:text-white transition-colors opacity-80 hover:opacity-100 uppercase" href="#">Solution Toolbox</a>
+<a class="text-slate-400 hover:text-white transition-colors opacity-80 hover:opacity-100 uppercase" href="#">Policy DB</a>
+<a class="text-slate-400 hover:text-white transition-colors opacity-80 hover:opacity-100 uppercase" href="#">AI Chat</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="font-bold text-white mb-2">Company</h5>
+<a class="text-slate-400 hover:text-white transition-colors opacity-80 hover:opacity-100 uppercase" href="#">About Us</a>
+<a class="text-slate-400 hover:text-white transition-colors opacity-80 hover:opacity-100 uppercase" href="#">Contact</a>
+<a class="text-slate-400 hover:text-white transition-colors opacity-80 hover:opacity-100 uppercase" href="#">Careers</a>
+</div>
+<div class="flex flex-col gap-3">
+<h5 class="font-bold text-white mb-2">Legal</h5>
+<a class="text-slate-400 hover:text-white transition-colors opacity-80 hover:opacity-100 uppercase" href="#">Privacy Policy</a>
+<a class="text-slate-400 hover:text-white transition-colors opacity-80 hover:opacity-100 uppercase" href="#">Terms of Service</a>
+<a class="text-slate-400 hover:text-white transition-colors opacity-80 hover:opacity-100 uppercase" href="#">ESG Commitment</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

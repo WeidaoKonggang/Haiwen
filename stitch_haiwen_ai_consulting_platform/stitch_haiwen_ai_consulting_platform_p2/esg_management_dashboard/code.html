@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ESG Management - HQ Haiwen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#191c1e",
+                      "on-primary-fixed": "#00174b",
+                      "surface-container-low": "#f2f4f6",
+                      "inverse-surface": "#2d3133",
+                      "secondary-container": "#d5e3fd",
+                      "primary": "#004ac6",
+                      "surface-bright": "#f7f9fb",
+                      "surface-container-high": "#e6e8ea",
+                      "primary-fixed": "#dbe1ff",
+                      "on-secondary": "#ffffff",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "outline": "#737686",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed-variant": "#7d2d00",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-container": "#eeefff",
+                      "background": "#f7f9fb",
+                      "surface": "#f7f9fb",
+                      "on-secondary-fixed": "#0d1c2f",
+                      "inverse-on-surface": "#eff1f3",
+                      "surface-tint": "#0053db",
+                      "primary-container": "#2563eb",
+                      "surface-variant": "#e0e3e5",
+                      "secondary-fixed-dim": "#b9c7e0",
+                      "on-secondary-fixed-variant": "#3a485c",
+                      "on-primary": "#ffffff",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-error-container": "#93000a",
+                      "surface-dim": "#d8dadc",
+                      "secondary-fixed": "#d5e3fd",
+                      "on-tertiary-fixed": "#360f00",
+                      "on-tertiary-container": "#ffede6",
+                      "tertiary-fixed-dim": "#ffb596",
+                      "surface-container": "#eceef0",
+                      "on-surface-variant": "#434655",
+                      "on-tertiary": "#ffffff",
+                      "on-surface": "#191c1e",
+                      "tertiary-container": "#bc4800",
+                      "secondary": "#515f74",
+                      "tertiary-fixed": "#ffdbcd",
+                      "tertiary": "#943700",
+                      "outline-variant": "#c3c6d7",
+                      "on-secondary-container": "#57657b",
+                      "error-container": "#ffdad6",
+                      "inverse-primary": "#b4c5ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {},
+              "fontFamily": {
+                      "headline": [
+                              "Manrope"
+                      ],
+                      "display": [
+                              "Manrope"
+                      ],
+                      "body": [
+                              "Inter"
+                      ],
+                      "label": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {}
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-panel {
+            background: rgba(247, 249, 251, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .ambient-shadow {
+            box-shadow: 0px 24px 48px rgba(25, 28, 30, 0.06);
+        }
+      </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-8 h-16 bg-[#f7f9fb]/80 dark:bg-slate-900/80 backdrop-blur-xl docked full-width top-0 z-50 flat no shadows border-b-0 border-transparent" style="box-shadow: 0 1px 0 rgba(242, 244, 246, 1);">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-[#191c1e] dark:text-white font-headline">Global Architect</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-manrope tracking-tight font-semibold text-[#434655] dark:text-slate-400 hover:text-[#004ac6] transition-colors duration-200" href="#">Dashboard</a>
+<a class="font-manrope tracking-tight font-semibold text-[#434655] dark:text-slate-400 hover:text-[#004ac6] transition-colors duration-200" href="#">Analytics</a>
+<a class="font-manrope tracking-tight font-semibold text-[#434655] dark:text-slate-400 hover:text-[#004ac6] transition-colors duration-200" href="#">Reports</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant hover:text-[#004ac6] transition-colors duration-200 scale-95 duration-150 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-[#004ac6] transition-colors duration-200 scale-95 duration-150 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-surface-container-high ml-2 cursor-pointer">
+<img alt="User profile avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAShHvQ8HW8k-p_Dhct4-BBUcGl1wbi5oy4Xx6gXd1WlRixb5bpN6cY_b9IP-S4A8eedPbgG0fIPyJQF51c4gbB68YjtF4Q-qLwkdDXzNhSamFoWxV7jdKHpgkszp4lhGB6eesfJT0oFqYfjjtmUyDsGgh3Afr5WOLoOCJr64y6EKw-UXLgPEyi6WoSY3QRAwleLK2tdSMlQdoGbE8zzz68Q6e5VBl503Z7Tbdk_Yl8pwQ3TydwXV-HPeYzFCghIiysedmU46Rhr4w"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar & Main Content Wrapper -->
+<div class="flex h-screen pt-16">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 bottom-0 flex flex-col p-4 w-64 bg-[#f2f4f6] dark:bg-slate-800 docked left-0 h-full w-64 border-r border-transparent flat no shadows z-40">
+<div class="mb-8 px-2 flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary font-bold shadow-sm">
+                    E
+                </div>
+<div>
+<h2 class="font-headline font-bold text-on-surface leading-tight">Enterprise ESG</h2>
+<p class="text-xs text-on-surface-variant">Global Strategy</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium font-inter text-[#434655] dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-700/50 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="dashboard">dashboard</span>
+                    Workspace
+                </a>
+<!-- Active State Example (Since prompt asks for ESG Management active, we'll assume it maps to Compliance Tools or we just highlight one) -->
+<a class="flex items-center gap-3 px-3 py-2.5 bg-white dark:bg-slate-700 text-[#004ac6] dark:text-white rounded-lg shadow-sm font-bold font-inter text-sm Active: opacity-80" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="verified_user">verified_user</span>
+                    Compliance Tools
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium font-inter text-[#434655] dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-700/50 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="public">public</span>
+                    Go-Global
+                </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium font-inter text-[#434655] dark:text-slate-400 hover:bg-white/50 dark:hover:bg-slate-700/50 hover:translate-x-1 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="hub">hub</span>
+                    Resources
+                </a>
+</nav>
+<div class="mt-auto pt-4 space-y-1 border-t border-transparent" style="box-shadow: 0 -1px 0 rgba(247, 249, 251, 1);">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="help">help</span>
+                    Support
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="description">description</span>
+                    Documentation
+                </a>
+<button class="mt-4 w-full bg-gradient-to-br from-primary to-primary-container text-on-primary rounded-full py-2.5 text-sm font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    New Assessment
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-64 p-8 overflow-y-auto bg-surface">
+<div class="max-w-7xl mx-auto space-y-12">
+<!-- Header Section -->
+<header class="flex flex-col gap-2">
+<h1 class="font-headline text-5xl font-extrabold tracking-tight text-on-background">ESG Management</h1>
+<p class="font-body text-base text-on-surface-variant max-w-2xl mt-1 leading-relaxed">AI industry-adapted integrated platform for ESG data collection, report generation, and rating improvement</p>
+</header>
+<!-- Scorecards Bento Grid -->
+<section>
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+<!-- Overall Score Card -->
+<div class="lg:col-span-1 rounded-xl p-6 flex flex-col justify-between text-on-primary ambient-shadow" style="background: linear-gradient(135deg, #004ac6 0%, #0053db 100%);">
+<div class="flex justify-between items-start">
+<h3 class="font-headline font-semibold text-lg opacity-90">ESG Overall Score</h3>
+<span class="material-symbols-outlined opacity-70">assessment</span>
+</div>
+<div class="mt-8">
+<div class="text-6xl font-headline font-bold tracking-tighter">74</div>
+<div class="flex items-center gap-2 mt-2 text-sm font-medium bg-white/20 w-fit px-3 py-1 rounded-full backdrop-blur-md">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                                    +5 vs last Q
+                                </div>
+</div>
+</div>
+<!-- Environmental Card -->
+<div class="lg:col-span-1 bg-surface-container-lowest rounded-xl p-6 ambient-shadow flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<h3 class="font-headline font-semibold text-on-surface">Environmental (E)</h3>
+<span class="text-2xl font-bold text-on-surface">72</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-1.5 mt-1">
+<div class="bg-emerald-500 h-1.5 rounded-full" style="width: 72%"></div>
+</div>
+<div class="mt-2 space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Carbon Emission</span>
+<span class="font-medium text-on-surface">12k tons</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Energy Consumption</span>
+<span class="font-medium text-on-surface">45M kWh</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Renewable Energy</span>
+<span class="font-medium text-on-surface">38%</span>
+</div>
+</div>
+</div>
+<!-- Social Card -->
+<div class="lg:col-span-1 bg-surface-container-lowest rounded-xl p-6 ambient-shadow flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<h3 class="font-headline font-semibold text-on-surface">Social (S)</h3>
+<span class="text-2xl font-bold text-on-surface">68</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-1.5 mt-1">
+<div class="bg-blue-500 h-1.5 rounded-full" style="width: 68%"></div>
+</div>
+<div class="mt-2 space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Total Employees</span>
+<span class="font-medium text-on-surface">4,250</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Female Employee Ratio</span>
+<span class="font-medium text-on-surface">42%</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Training Hours</span>
+<span class="font-medium text-on-surface">32h/yr</span>
+</div>
+</div>
+</div>
+<!-- Governance Card -->
+<div class="lg:col-span-1 bg-surface-container-lowest rounded-xl p-6 ambient-shadow flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<h3 class="font-headline font-semibold text-on-surface">Governance (G)</h3>
+<span class="text-2xl font-bold text-on-surface">81</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-full h-1.5 mt-1">
+<div class="bg-purple-500 h-1.5 rounded-full" style="width: 81%"></div>
+</div>
+<div class="mt-2 space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Board Independence</span>
+<span class="font-medium text-on-surface">65%</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Anti-Corruption Training</span>
+<span class="font-medium text-on-surface">98%</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Data Breach Incidents</span>
+<span class="font-medium text-on-surface">0</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Access Grid -->
+<section>
+<h2 class="font-headline text-2xl font-bold text-on-background mb-6">Quick Actions</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col items-start gap-4 border border-outline-variant/20 hover:border-primary/30 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">data_usage</span>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-on-surface">ESG Data Collection</h4>
+<p class="text-sm text-on-surface-variant mt-1">Streamline metrics gathering</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col items-start gap-4 border border-outline-variant/20 hover:border-primary/30 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-on-surface">ESG Report Generation</h4>
+<p class="text-sm text-on-surface-variant mt-1">Automated compliance docs</p>
+</div>
+</div>
+<!-- Card 3 (Hovered State Simulation) -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col items-start gap-4 border-2 border-primary ambient-shadow cursor-pointer relative overflow-hidden">
+<div class="absolute inset-0 bg-primary/5"></div>
+<div class="w-12 h-12 rounded-lg bg-primary text-on-primary flex items-center justify-center relative z-10">
+<span class="material-symbols-outlined">account_tree</span>
+</div>
+<div class="relative z-10">
+<h4 class="font-headline font-semibold text-primary">System Planning</h4>
+<p class="text-sm text-on-surface-variant mt-1">Architect your strategy</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 flex flex-col items-start gap-4 border border-outline-variant/20 hover:border-primary/30 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-on-surface">Rating Improvement</h4>
+<p class="text-sm text-on-surface-variant mt-1">Actionable AI insights</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Compliance Status List/Table -->
+<section>
+<div class="bg-surface-container-lowest rounded-xl p-8 ambient-shadow">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline text-2xl font-bold text-on-background">ESG Standards Compliance Status</h2>
+<p class="text-sm text-on-surface-variant mt-1">Track progress against global frameworks</p>
+</div>
+<button class="text-primary font-medium text-sm hover:underline flex items-center gap-1">
+                                View All
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="space-y-6">
+<!-- Item 1 -->
+<div class="flex items-center gap-6 p-4 rounded-lg bg-surface hover:bg-surface-container-low transition-colors">
+<div class="w-24">
+<span class="font-headline font-bold text-on-surface">GRI</span>
+</div>
+<div class="flex-1">
+<div class="w-full bg-surface-dim rounded-full h-2">
+<div class="bg-emerald-500 h-2 rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<div class="w-20 text-right text-sm font-medium text-on-surface">100%</div>
+<div class="w-28 text-right">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
+                                        Done
+                                    </span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-6 p-4 rounded-lg bg-surface hover:bg-surface-container-low transition-colors">
+<div class="w-24">
+<span class="font-headline font-bold text-on-surface">ISSB</span>
+</div>
+<div class="flex-1">
+<div class="w-full bg-surface-dim rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<div class="w-20 text-right text-sm font-medium text-on-surface">65%</div>
+<div class="w-28 text-right">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                        In Progress
+                                    </span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center gap-6 p-4 rounded-lg bg-surface hover:bg-surface-container-low transition-colors">
+<div class="w-24">
+<span class="font-headline font-bold text-on-surface">TCFD</span>
+</div>
+<div class="flex-1">
+<div class="w-full bg-surface-dim rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 40%"></div>
+</div>
+</div>
+<div class="w-20 text-right text-sm font-medium text-on-surface">40%</div>
+<div class="w-28 text-right">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                        In Progress
+                                    </span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center gap-6 p-4 rounded-lg bg-surface hover:bg-surface-container-low transition-colors">
+<div class="w-24">
+<span class="font-headline font-bold text-on-surface">SASB</span>
+</div>
+<div class="flex-1">
+<div class="w-full bg-surface-dim rounded-full h-2">
+<div class="bg-surface-variant h-2 rounded-full" style="width: 10%"></div>
+</div>
+</div>
+<div class="w-20 text-right text-sm font-medium text-on-surface-variant">10%</div>
+<div class="w-28 text-right">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                        Planned
+                                    </span>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="flex items-center gap-6 p-4 rounded-lg bg-surface hover:bg-surface-container-low transition-colors">
+<div class="w-24">
+<span class="font-headline font-bold text-on-surface">EU CSRD</span>
+</div>
+<div class="flex-1">
+<div class="w-full bg-surface-dim rounded-full h-2">
+<div class="bg-surface-variant h-2 rounded-full" style="width: 0%"></div>
+</div>
+</div>
+<div class="w-20 text-right text-sm font-medium text-on-surface-variant">0%</div>
+<div class="w-28 text-right">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                        Planned
+                                    </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>

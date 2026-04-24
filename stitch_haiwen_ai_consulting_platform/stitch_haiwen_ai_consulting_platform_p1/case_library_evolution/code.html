@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Case Library | HaiWen Global Architecture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-surface": "#191c1e",
+                        "surface-bright": "#f7f9fb",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#57657b",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "secondary-fixed": "#d5e3fd",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "outline-variant": "#c3c6d7",
+                        "on-primary-fixed": "#00174b",
+                        "surface-tint": "#0053db",
+                        "outline": "#737686",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary-container": "#d5e3fd",
+                        "on-background": "#191c1e",
+                        "inverse-primary": "#b4c5ff",
+                        "tertiary-fixed": "#ffdbcd",
+                        "tertiary-container": "#bc4800",
+                        "surface-container-highest": "#e0e3e5",
+                        "inverse-surface": "#2d3133",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "primary-container": "#2563eb",
+                        "on-tertiary-container": "#ffede6",
+                        "on-error": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "primary": "#004ac6",
+                        "on-primary-container": "#eeefff",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#943700",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#f7f9fb",
+                        "background": "#f7f9fb",
+                        "secondary": "#515f74",
+                        "on-surface-variant": "#434655",
+                        "on-tertiary-fixed-variant": "#7d2d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift-from-surface-to-low {
+            background-color: #f7f9fb;
+            transition: background-color 0.3s ease;
+        }
+        .tonal-shift-high-to-low {
+            background-color: #f2f4f6;
+        }
+        .ambient-shadow {
+            box-shadow: 0px 24px 48px rgba(25, 28, 30, 0.06);
+        }
+        .ghost-border {
+            outline: 1px solid rgba(195, 198, 215, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-sm">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-8 h-20">
+<div class="flex items-center gap-12">
+<span class="text-2xl font-bold tracking-tighter text-blue-700">HaiWen</span>
+<nav class="hidden md:flex gap-8 items-center h-full">
+<a class="text-slate-500 font-medium hover:text-blue-600 transition-opacity duration-300" href="#">Dashboard</a>
+<a class="text-blue-700 font-extrabold border-b-2 border-blue-700 pb-1" href="#">Cases</a>
+<a class="text-slate-500 font-medium hover:text-blue-600 transition-opacity duration-300" href="#">Insights</a>
+<a class="text-slate-500 font-medium hover:text-blue-600 transition-opacity duration-300" href="#">Strategy</a>
+<a class="text-slate-500 font-medium hover:text-blue-600 transition-opacity duration-300" href="#">Network</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-surface-container-low px-4 py-2 rounded-full ghost-border">
+<span class="material-symbols-outlined text-slate-400 mr-2 text-[20px]" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder-slate-400" placeholder="Search cases..." type="text"/>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:opacity-80 transition-opacity" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-slate-500 cursor-pointer hover:opacity-80 transition-opacity" data-icon="settings">settings</span>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2 rounded-full font-semibold text-sm active:scale-95 transition-transform">Consult AI</button>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-20 px-8 max-w-7xl mx-auto">
+<!-- Header Section -->
+<section class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<span class="text-primary font-bold text-sm tracking-[0.2em] uppercase mb-4 block">Archive &amp; Intelligence</span>
+<h1 class="font-headline text-5xl font-extrabold tracking-tighter text-on-surface mb-6">Case Library</h1>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                        Explore our global repository of ESG initiatives, technological deployments, and cross-border consulting success stories.
+                    </p>
+</div>
+<div class="flex items-center gap-3">
+<div class="bg-surface-container-lowest ambient-shadow rounded-full px-6 py-4 flex items-center gap-4 ghost-border">
+<div class="flex items-center gap-2 pr-4 border-r border-outline-variant/20">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="filter_list">filter_list</span>
+<span class="text-sm font-semibold text-on-surface-variant">Filter By</span>
+</div>
+<select class="bg-transparent border-none focus:ring-0 text-sm font-medium text-slate-700 py-0">
+<option>Regions</option>
+</select>
+<select class="bg-transparent border-none focus:ring-0 text-sm font-medium text-slate-700 py-0">
+<option>Industries</option>
+</select>
+<select class="bg-transparent border-none focus:ring-0 text-sm font-medium text-slate-700 py-0">
+<option>ESG Themes</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Search Bar (Large) -->
+<div class="mt-12 relative">
+<div class="absolute inset-y-0 left-6 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container-lowest py-6 pl-16 pr-8 rounded-2xl ghost-border ambient-shadow focus:ring-2 focus:ring-primary/20 focus:outline-none text-lg" placeholder="Search company name or keyword..." type="text"/>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Evolution Grid -->
+<div class="lg:col-span-8">
+<div class="mb-8 flex items-center gap-4">
+<h2 class="font-headline text-2xl font-bold tracking-tight">UI Evolution: From Concept to Production</h2>
+<div class="h-px flex-grow bg-outline-variant/20"></div>
+</div>
+<div class="space-y-12">
+<!-- Tier 1: Basic -->
+<div class="group">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-slate-200 text-slate-600 text-[10px] font-black uppercase px-2 py-0.5 rounded">Tier 01</span>
+<span class="text-slate-400 text-sm font-medium">Minimalist Baseline</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl ghost-border hover:shadow-sm transition-all flex items-center justify-between">
+<div>
+<h3 class="font-bold text-lg mb-1">Starlight Logistics</h3>
+<div class="flex gap-4 text-xs text-on-surface-variant">
+<span>Supply Chain</span>
+<span>•</span>
+<span>2023</span>
+<span class="text-primary font-semibold uppercase tracking-wider">Environmental</span>
+</div>
+</div>
+<button class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                                View Details <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Tier 2: Intermediate -->
+<div class="group">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-blue-100 text-blue-700 text-[10px] font-black uppercase px-2 py-0.5 rounded">Tier 02</span>
+<span class="text-slate-400 text-sm font-medium">Contextual Enrichment</span>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl ghost-border hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+<div class="flex justify-between items-start mb-6">
+<div>
+<div class="flex gap-2 mb-3">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm">Middle East</span>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm">Retail</span>
+</div>
+<h3 class="font-headline text-2xl font-bold mb-2">Majid Al Futtaim</h3>
+<p class="text-on-surface-variant text-sm font-medium italic">Streamlining carbon reporting across regional hypermarket operations.</p>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed-variant text-xs font-bold px-3 py-1 rounded-full">ESG Pillar: Social</span>
+</div>
+<div class="flex justify-between items-center pt-6 border-t border-outline-variant/10">
+<span class="text-xs text-slate-400 font-medium">Archived Nov 2023</span>
+<button class="bg-slate-900 text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-primary transition-colors">Case Insight</button>
+</div>
+</div>
+</div>
+<!-- Tier 3: Advanced -->
+<div class="group">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-primary text-white text-[10px] font-black uppercase px-2 py-0.5 rounded">Tier 03</span>
+<span class="text-slate-400 text-sm font-medium">Production-Ready High Fidelity</span>
+</div>
+<div class="bg-surface-container-lowest p-10 rounded-[2rem] ghost-border ambient-shadow relative overflow-hidden group/card hover:ring-2 hover:ring-primary/10 transition-all duration-500">
+<!-- Visual Accent -->
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[100%] transition-transform group-hover/card:scale-150 duration-700"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-8">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-white font-headline text-2xl font-black">
+                                            NH
+                                        </div>
+<div>
+<h3 class="font-headline text-2xl font-extrabold tracking-tight">Neom Hydrogen</h3>
+<div class="flex gap-3 mt-1">
+<span class="text-primary text-[11px] font-black uppercase tracking-tighter">Energy Infrastructure</span>
+<span class="text-slate-300">•</span>
+<span class="text-slate-400 text-[11px] font-bold">Q4 2024 Release</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-3xl font-headline font-black text-primary tracking-tighter">99%</span>
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">Compliance Rate</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-base leading-relaxed mb-8 max-w-xl">
+                                    Architecting a real-time ESG monitoring framework for the world's largest green hydrogen plant. Ensuring radical transparency across a complex multi-national supplier network while meeting stringent EU taxonomy standards for sustainable investment.
+                                </p>
+<div class="flex flex-wrap gap-2 mb-10">
+<button class="bg-surface-container-low hover:bg-primary-fixed text-on-surface-variant text-[11px] font-bold px-4 py-2 rounded-full transition-colors">Supply Chain Audit</button>
+<button class="bg-surface-container-low hover:bg-primary-fixed text-on-surface-variant text-[11px] font-bold px-4 py-2 rounded-full transition-colors">EU Taxonomy</button>
+<button class="bg-surface-container-low hover:bg-primary-fixed text-on-surface-variant text-[11px] font-bold px-4 py-2 rounded-full transition-colors">Real-time IoT</button>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex -space-x-3">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional male consultant portrait looking forward with a slight smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBttATbphS4ZJOIx9EFRPwgckdFAJR6LPtlWpqZ2EHZIyTZEfs6Cc_3YSsL10eUzkrRbm6Kumd8jYLa0EjKzJvORyzeXQX8ZExfxCK8E7rYUF1PUzVv8jGFCqtvAGzVE7iA5gskkb6P7JOK91aK-mokEnQ1Iyo3Hwq7lPiI1yeSJBRoTVMfoTSfzOR4jLD8FSXiV_a54h5X2wU2epdOHuc60eusUkgvX3evJYFmFqX_F6vJESszyJbVGALiCcTyrhiRLGw0LJABEw4"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Professional female consultant portrait with confident expression and dark hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAODT1dHpHSdn9K5q-Eq4ELqC8Z7cw7NoMXLJXFrL17grqII5EWtmFoBPZdGYccB4OA4fClIXwA10YFp6vSKjvDme145s6cH4eRMr1FkNiIMih2nKJvkItFyU_6Hkbh2di33UJhDznOXGrP5n-ipKWJu1ajiXI2qUJZKUgLutnZrl_iDhjpFEMI-7EQrwXeccMUPoNvPI6CXbdXe-OkeHdGyLa4OEUi_VbRgj4p7nSL3jMcPMu3weu8WN1D_P6XrYahjmfXXPp9n1g"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-primary text-[10px] text-white flex items-center justify-center font-bold">
+                                            +4
+                                        </div>
+</div>
+<button class="flex items-center gap-2 bg-primary text-white pl-8 pr-6 py-4 rounded-full font-bold group-hover/card:bg-slate-900 transition-all duration-300">
+                                        Access Full Dossier
+                                        <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Featured Panel -->
+<aside class="lg:col-span-4">
+<div class="sticky top-32 space-y-8">
+<div class="bg-slate-900 rounded-[2.5rem] p-10 text-white relative overflow-hidden">
+<!-- Decorative Gradient -->
+<div class="absolute top-0 right-0 w-full h-full opacity-20 pointer-events-none">
+<div class="absolute top-[-20%] right-[-10%] w-64 h-64 bg-blue-500 rounded-full blur-[80px]"></div>
+</div>
+<div class="relative z-10">
+<span class="bg-white/10 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-[0.2em] px-4 py-2 rounded-full mb-8 inline-block">Strategic Case Insight</span>
+<h3 class="font-headline text-3xl font-bold leading-tight mb-6">SenseTime Smart City</h3>
+<div class="space-y-6 mb-10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-blue-400 mt-1" data-icon="check_circle">check_circle</span>
+<p class="text-slate-300 text-sm leading-relaxed">Deployed AI-driven crowd management systems across 12 urban clusters.</p>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-blue-400 mt-1" data-icon="trending_up">trending_up</span>
+<p class="text-slate-300 text-sm leading-relaxed">Achieved 40% reduction in peak-hour traffic congestion during Q1 pilot.</p>
+</div>
+</div>
+<div class="p-8 bg-white/5 rounded-3xl border border-white/10 mb-10">
+<span class="text-slate-400 text-[10px] font-bold uppercase tracking-widest block mb-2">Primary Success Metric</span>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-headline font-black text-white">1.2M</span>
+<span class="text-blue-400 font-bold">CO2 Tons/Year</span>
+</div>
+<p class="text-slate-400 text-xs mt-4 italic">Offset equivalent to planting 20M trees annually.</p>
+</div>
+<button class="w-full bg-white text-slate-900 py-4 rounded-2xl font-bold hover:bg-blue-400 hover:text-white transition-all">
+                                Request Methodology PDF
+                            </button>
+</div>
+</div>
+<!-- Supplemental Resources -->
+<div class="bg-surface-container-low p-8 rounded-[2rem] ghost-border">
+<h4 class="font-headline font-bold text-lg mb-6">Related Frameworks</h4>
+<div class="space-y-4">
+<a class="flex items-center justify-between group" href="#">
+<span class="text-on-surface-variant font-medium text-sm group-hover:text-primary transition-colors">ESG Risk Assessment 2024</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary text-lg" data-icon="download">download</span>
+</a>
+<div class="h-px bg-outline-variant/10"></div>
+<a class="flex items-center justify-between group" href="#">
+<span class="text-on-surface-variant font-medium text-sm group-hover:text-primary transition-colors">Cross-Border AI Ethics</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary text-lg" data-icon="open_in_new">open_in_new</span>
+</a>
+<div class="h-px bg-outline-variant/10"></div>
+<a class="flex items-center justify-between group" href="#">
+<span class="text-on-surface-variant font-medium text-sm group-hover:text-primary transition-colors">Global Connectivity Audit</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary text-lg" data-icon="download">download</span>
+</a>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-auto bg-slate-50 border-t border-slate-200/50">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center py-12 px-8">
+<div class="mb-8 md:mb-0">
+<span class="font-manrope font-black text-slate-900 text-xl">HaiWen Global Architecture</span>
+<p class="text-slate-500 text-sm mt-2 font-inter tracking-wide">© 2024 HaiWen Global Architecture. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-blue-600 font-inter text-sm transition-colors duration-200" href="#">Ethics</a>
+<a class="text-slate-500 hover:text-blue-600 font-inter text-sm transition-colors duration-200" href="#">Privacy</a>
+<a class="text-slate-500 hover:text-blue-600 font-inter text-sm transition-colors duration-200" href="#">Methodology</a>
+<a class="text-slate-500 hover:text-blue-600 font-inter text-sm transition-colors duration-200" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

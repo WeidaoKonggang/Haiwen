@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HQ Haiwen - Resource Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#b4c5ff",
+                        "on-secondary-container": "#57657b",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#ffdbcd",
+                        "tertiary": "#943700",
+                        "outline-variant": "#c3c6d7",
+                        "secondary": "#515f74",
+                        "tertiary-container": "#bc4800",
+                        "on-surface": "#191c1e",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "surface-container": "#eceef0",
+                        "surface-dim": "#d8dadc",
+                        "secondary-fixed": "#d5e3fd",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-tertiary-container": "#ffede6",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3a485c",
+                        "secondary-fixed-dim": "#b9c7e0",
+                        "surface-variant": "#e0e3e5",
+                        "primary-container": "#2563eb",
+                        "surface-tint": "#0053db",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary-fixed": "#0d1c2f",
+                        "surface": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#eeefff",
+                        "background": "#f7f9fb",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "error": "#ba1a1a",
+                        "outline": "#737686",
+                        "on-error": "#ffffff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-container-high": "#e6e8ea",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f7f9fb",
+                        "primary": "#004ac6",
+                        "secondary-container": "#d5e3fd",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed": "#00174b",
+                        "on-background": "#191c1e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "display": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .ambient-shadow { box-shadow: 0px 24px 48px rgba(25, 28, 30, 0.06); }
+        .ghost-border { border: 1px solid rgba(195, 198, 215, 0.2); }
+        .gradient-primary { background: linear-gradient(135deg, #004ac6, #2563eb); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="sticky bg-slate-50/80 backdrop-blur-md dark:bg-slate-900/80 docked full-width top-0 z-50 shadow-none border-b-0 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-manrope text-xl font-black tracking-tighter text-slate-900 dark:text-slate-50" href="#">HQ Haiwen</a>
+<nav class="hidden md:flex items-center gap-6 font-manrope text-sm font-medium tracking-tight">
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-lg px-3 py-2" href="#">Solutions</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-lg px-3 py-2" href="#">Insights</a>
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 dark:border-blue-400 pb-1 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-t-lg px-3 pt-2" href="#">Resources</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-lg px-3 py-2" href="#">Company</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="w-64 pl-9 pr-4 py-2 bg-surface-container-lowest rounded-full ghost-border text-sm focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary-fixed/30 transition-all text-on-surface placeholder:text-on-surface-variant/50 font-body" placeholder="Search resources..." type="text"/>
+</div>
+<a class="font-manrope text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-blue-600 px-4 py-2 transition-colors" href="#">Login</a>
+<a class="gradient-primary text-on-primary font-manrope text-sm font-bold px-6 py-2.5 rounded-full hover:shadow-lg transition-shadow" href="#">Get Started</a>
+</div>
+</div>
+</header>
+<main class="max-w-screen-2xl mx-auto px-8 py-16 lg:py-24 space-y-24">
+<!-- Hero Section -->
+<section class="flex flex-col lg:flex-row justify-between items-start gap-12">
+<div class="max-w-3xl space-y-6">
+<h1 class="font-headline text-5xl lg:text-7xl font-extrabold text-on-surface tracking-tighter leading-tight">
+                    Resource Center
+                </h1>
+<p class="font-body text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                    AI global expansion compliance guides, policy templates, industry reports, and webinar resources.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-6">
+<div class="relative w-full sm:w-80">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest rounded-xl ghost-border text-base focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary-fixed/30 transition-all text-on-surface font-body ambient-shadow" placeholder="Search resources..." type="text"/>
+</div>
+<div class="relative w-full sm:w-48">
+<select class="w-full px-4 py-4 bg-surface-container-lowest rounded-xl ghost-border text-base appearance-none focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary-fixed/30 transition-all text-on-surface font-body ambient-shadow cursor-pointer">
+<option>All Markets</option>
+<option>EU Region</option>
+<option>APAC Region</option>
+<option>North America</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Category Tabs -->
+<section>
+<div class="flex overflow-x-auto pb-4 gap-3 no-scrollbar border-b border-surface-dim/50">
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-secondary-container text-on-secondary-container font-medium text-sm transition-colors">All Resources</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-transparent text-on-surface-variant hover:bg-surface-container-low font-medium text-sm transition-colors">Compliance Guides</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-transparent text-on-surface-variant hover:bg-surface-container-low font-medium text-sm transition-colors">Document Templates</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-transparent text-on-surface-variant hover:bg-surface-container-low font-medium text-sm transition-colors">Industry Reports</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-transparent text-on-surface-variant hover:bg-surface-container-low font-medium text-sm transition-colors">Checklists</button>
+<button class="whitespace-nowrap px-6 py-2.5 rounded-full bg-transparent text-on-surface-variant hover:bg-surface-container-low font-medium text-sm transition-colors">Webinars</button>
+</div>
+</section>
+<!-- Featured Banner -->
+<section class="rounded-[2rem] p-10 lg:p-16 gradient-primary text-on-primary ambient-shadow relative overflow-hidden flex flex-col md:flex-row items-center gap-10">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&amp;fit=crop&amp;q=80')] opacity-10 bg-cover bg-center mix-blend-overlay" data-alt="abstract flowing gradient waves in deep blue and purple hues"></div>
+<div class="w-24 h-24 rounded-2xl bg-surface/10 backdrop-blur-md flex items-center justify-center shrink-0 border border-surface/20 z-10">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">book</span>
+</div>
+<div class="space-y-4 flex-1 z-10">
+<span class="inline-block px-3 py-1 rounded-full bg-surface/20 text-xs font-bold tracking-wider uppercase backdrop-blur-sm border border-surface/10">Latest Release</span>
+<h2 class="font-headline text-3xl md:text-4xl font-extrabold tracking-tight">Complete EU AI Act Compliance Guide (2024)</h2>
+<p class="text-primary-container-on-primary/80 text-lg max-w-3xl">Comprehensive EU AI Act analysis, risk classification matrices, and step-by-step implementation roadmaps for global AI deployment.</p>
+</div>
+<div class="z-10 shrink-0">
+<button class="bg-surface text-primary font-bold px-8 py-4 rounded-full hover:bg-surface-container-lowest transition-colors shadow-lg flex items-center gap-2">
+                    Free Download
+                    <span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+</section>
+<!-- Resource Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl p-8 flex flex-col h-full ambient-shadow transition-transform hover:-translate-y-1 duration-300">
+<div class="flex items-center gap-3 mb-6">
+<span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">description</span>
+</span>
+<span class="text-xs font-bold tracking-wider uppercase text-emerald-700">Template</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-3 leading-tight">GDPR DPIA Template</h3>
+<div class="flex flex-wrap gap-2 mb-6 mt-auto pt-6">
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant text-xs font-medium">GDPR</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant text-xs font-medium">Data Protection</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-surface-dim/30">
+<span class="text-xs text-on-surface-variant/70">2024-10-15 · 1,923 reads</span>
+<a class="text-primary font-semibold text-sm hover:underline flex items-center gap-1" href="#">Get <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl p-8 flex flex-col h-full ambient-shadow transition-transform hover:-translate-y-1 duration-300">
+<div class="flex items-center gap-3 mb-6">
+<span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">analytics</span>
+</span>
+<span class="text-xs font-bold tracking-wider uppercase text-purple-700">Report</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-3 leading-tight">2024 AI Global Expansion Compliance Trend Report</h3>
+<div class="flex flex-wrap gap-2 mb-6 mt-auto pt-6">
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant text-xs font-medium">Industry Report</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant text-xs font-medium">AI Regulation</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-surface-dim/30">
+<span class="text-xs text-on-surface-variant/70">2024-09-20 · 4,102 reads</span>
+<a class="text-primary font-semibold text-sm hover:underline flex items-center gap-1" href="#">Get <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl p-8 flex flex-col h-full ambient-shadow transition-transform hover:-translate-y-1 duration-300">
+<div class="flex items-center gap-3 mb-6">
+<span class="w-8 h-8 rounded-lg bg-orange-100 text-orange-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">checklist</span>
+</span>
+<span class="text-xs font-bold tracking-wider uppercase text-orange-700">Checklist</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-3 leading-tight">Singapore PDPA Compliance Checklist</h3>
+<div class="flex flex-wrap gap-2 mb-6 mt-auto pt-6">
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant text-xs font-medium">Singapore</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant text-xs font-medium">PDPA</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-surface-dim/30">
+<span class="text-xs text-on-surface-variant/70">2024-10-08 · 1,256 reads</span>
+<a class="text-primary font-semibold text-sm hover:underline flex items-center gap-1" href="#">Get <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="bg-surface-container-lowest rounded-xl p-8 flex flex-col h-full ambient-shadow transition-transform hover:-translate-y-1 duration-300">
+<div class="flex items-center gap-3 mb-6">
+<span class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">menu_book</span>
+</span>
+<span class="text-xs font-bold tracking-wider uppercase text-blue-700">Guide</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-3 leading-tight">ESG Disclosure Practical Guide (GRI Standards)</h3>
+<div class="flex flex-wrap gap-2 mb-6 mt-auto pt-6">
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant text-xs font-medium">ESG</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant text-xs font-medium">GRI</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-surface-dim/30">
+<span class="text-xs text-on-surface-variant/70">2024-08-30 · 987 reads</span>
+<a class="text-primary font-semibold text-sm hover:underline flex items-center gap-1" href="#">Get <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</article>
+<!-- Card 5 -->
+<article class="bg-surface-container-lowest rounded-xl p-8 flex flex-col h-full ambient-shadow transition-transform hover:-translate-y-1 duration-300">
+<div class="flex items-center gap-3 mb-6">
+<span class="w-8 h-8 rounded-lg bg-teal-100 text-teal-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+</span>
+<span class="text-xs font-bold tracking-wider uppercase text-teal-700">Webinar</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-3 leading-tight">Roundtable: Chinese AI Companies Going Global in EU Compliance Practice</h3>
+<div class="flex flex-wrap gap-2 mb-6 mt-auto pt-6">
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant text-xs font-medium">Webinar</span>
+<span class="px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant text-xs font-medium">EU</span>
+</div>
+<div class="flex justify-between items-center pt-4 border-t border-surface-dim/30">
+<span class="text-xs text-on-surface-variant/70">2024-08-15 · 2,340 reads</span>
+<a class="text-primary font-semibold text-sm hover:underline flex items-center gap-1" href="#">Get <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</article>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-950 w-full border-t border-slate-200/20 dark:border-slate-800/20 tonal-shift-bg flat-no-shadows">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-8 py-12 max-w-screen-2xl mx-auto gap-6">
+<div class="flex flex-col gap-2 text-center md:text-left">
+<span class="font-manrope font-bold text-slate-900 dark:text-slate-100 text-lg">HQ Haiwen</span>
+<p class="font-inter text-xs tracking-wide text-slate-500 dark:text-slate-400">© 2024 HQ Haiwen Strategic Consulting. All rights reserved.</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-6 font-inter text-xs tracking-wide">
+<a class="text-slate-500 hover:text-blue-500 hover:underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-blue-500 hover:underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-blue-500 hover:underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">ESG Commitment</a>
+<a class="text-slate-500 hover:text-blue-500 hover:underline underline-offset-4 opacity-80 hover:opacity-100 transition-opacity" href="#">Global Offices</a>
+</nav>
+</div>
+</footer>
+</body></html>

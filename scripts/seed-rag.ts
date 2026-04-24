@@ -10,7 +10,13 @@
  *   DEEPSEEK_API_KEY
  */
 
-import 'dotenv/config'
+import { config as loadEnv } from 'dotenv'
+import path from 'path'
+
+// Next.js 默认用 .env.local，dotenv 默认只读 .env，这里两者都加载（.env.local 优先）
+loadEnv({ path: path.resolve(process.cwd(), '.env.local') })
+loadEnv({ path: path.resolve(process.cwd(), '.env') })
+
 import { createClient } from '@supabase/supabase-js'
 import {
   policyData,
@@ -19,28 +25,12 @@ import {
   riskEventData,
 } from '../lib/mock-data'
 import { casesData } from '../lib/cases-data'
+import { getEmbedding, getEmbeddingDimension } from '../lib/embedding'
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 )
-
-async function getEmbedding(text: string): Promise<number[]> {
-  const res = await fetch('https://api.deepseek.com/embeddings', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.DEEPSEEK_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: 'deepseek-embedding',
-      input: text.slice(0, 8000),
-    }),
-  })
-  if (!res.ok) throw new Error(`Embedding failed: ${await res.text()}`)
-  const json = await res.json()
-  return json.data[0].embedding
-}
 
 async function upsert(content: string, metadata: Record<string, string>) {
   console.log(`  向量化: ${content.slice(0, 50)}...`)
@@ -55,7 +45,8 @@ async function upsert(content: string, metadata: Record<string, string>) {
 }
 
 async function main() {
-  console.log('=== 海问 HQ RAG 数据写入开始 ===\n')
+  console.log('=== 海问 HQ RAG 数据写入开始 ===')
+  console.log(`Provider: ${process.env.EMBEDDING_PROVIDER ?? 'openai'} | 期望向量维度: ${getEmbeddingDimension()}\n`)
 
   // 1. 政策库
   console.log(`[1/5] 写入政策库 (${policyData.length} 条)`)

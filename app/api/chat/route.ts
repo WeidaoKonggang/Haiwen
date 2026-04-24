@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { retrieveContext, formatContext } from '@/lib/rag'
+import { retrieveDiverseContext, formatContext } from '@/lib/rag'
 
 const BASE_PROMPT_ZH = `你是海问（HQ），一位专注于中国AI企业出海与ESG创新的专业咨询顾问。你的专长领域包括：帮助中国AI企业制定国际化出海战略（市场进入策略、本地化运营、竞争格局分析）；ESG创新策略与全球标准合规管理；跨境合规框架分析（GDPR、EU AI Act、数据本地化、行业监管等）；以及目标市场商业机会识别与风险评估。
 
@@ -16,8 +16,28 @@ function buildSystemPrompt(locale: string, context: string): string {
 
   const contextSection =
     locale === 'zh'
-      ? `\n\n以下是海问平台知识库中与本次问题最相关的资料，请优先基于这些内容回答，并在适当时说明信息来源：\n\n---\n${context}\n---`
-      : `\n\nThe following are the most relevant documents from the HQ platform knowledge base. Please prioritize this content in your response and reference it where appropriate:\n\n---\n${context}\n---`
+      ? `\n\n以下是海问平台知识库中与本次问题最相关的资料（请严格遵守以下规则）：
+
+规则一：回答必须优先基于下方【知识库资料】，不要只用你自己的通用知识。
+规则二：凡是引用了知识库内容的地方，请在正文中用小括号自然标注，例如"（参考：EU AI Act政策条目）"、"（参考：旷视科技出海欧盟案例）"、"（参考：张明博士）"等；引用格式要简短、融入语句，不要干扰阅读。
+规则三：如果知识库中有相关专家、真实案例或具体政策条目，请在回答末尾用一段简短的"推荐进一步了解"引出，例如："如需深入了解，可参考 [某案例] 或联系 [某专家]"。
+规则四：如果知识库内容与用户问题不直接相关，请如实说明"知识库中暂无直接相关条目"，再基于通用知识回答。
+
+【知识库资料】
+---
+${context}
+---`
+      : `\n\nThe following are the most relevant documents from the HQ platform knowledge base. You MUST follow these rules:
+
+Rule 1: Prioritize the knowledge base below over your general knowledge.
+Rule 2: Whenever you cite the knowledge base, add an inline parenthetical note, e.g. "(source: EU AI Act policy entry)" / "(source: Megvii EU case)" / "(source: Dr. Zhang Ming)". Keep citations short and natural.
+Rule 3: If relevant experts / cases / policies exist in the knowledge base, end your reply with a short "Further reading" line referring to them by name.
+Rule 4: If the knowledge base has nothing directly relevant, say so explicitly, then fall back to general knowledge.
+
+[Knowledge Base]
+---
+${context}
+---`
 
   return base + contextSection
 }
@@ -42,10 +62,21 @@ export async function POST(req: NextRequest) {
     // RAG 检索（检索失败不影响主流程，静默降级）
     let context = ''
     try {
-      const docs = await retrieveContext(query, { matchCount: 5, minSimilarity: 0.35 })
+      const docs = await retrieveDiverseContext(query, { mainCount: 5, minSimilarity: 0.25 })
       context = formatContext(docs)
-    } catch {
-      // 向量库未就绪时静默跳过，仍使用原始 LLM 能力
+
+      // 调试日志：直接在 dev server 终端查看
+      console.log('\n========== [RAG] ==========')
+      console.log(`[RAG] Query: ${query.slice(0, 80)}${query.length > 80 ? '...' : ''}`)
+      console.log(`[RAG] 命中 ${docs.length} 条文档（主检索 + 案例 + 专家）`)
+      docs.forEach((d, i) => {
+        const type = d.metadata?.type ?? '?'
+        const snippet = d.content.split('\n').slice(0, 2).join(' | ').slice(0, 70)
+        console.log(`  ${i + 1}. [${(d.similarity * 100).toFixed(1)}%] <${type}> ${snippet}`)
+      })
+      console.log('===========================\n')
+    } catch (err) {
+      console.error('[RAG] 检索失败：', err)
     }
 
     const systemPrompt = buildSystemPrompt(locale, context)

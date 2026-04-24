@@ -49,6 +49,32 @@ export async function retrieveContext(
   }
 }
 
+// 多样化检索：全局 top N + 案例 top 2 + 专家 top 1
+// 保证 prompt 里同时有政策、案例、专家多种类型的条目
+export async function retrieveDiverseContext(
+  question: string,
+  options: { mainCount?: number; minSimilarity?: number } = {}
+): Promise<RetrievedDoc[]> {
+  const { mainCount = 5, minSimilarity = 0.25 } = options
+
+  const [main, cases, experts] = await Promise.all([
+    retrieveContext(question, { matchCount: mainCount, minSimilarity }),
+    retrieveContext(question, { matchCount: 2, filterType: 'case', minSimilarity: 0.2 }),
+    retrieveContext(question, { matchCount: 1, filterType: 'expert', minSimilarity: 0.2 }),
+  ])
+
+  // 按 id 去重合并
+  const seen = new Set<string>()
+  const merged: RetrievedDoc[] = []
+  for (const doc of [...main, ...cases, ...experts]) {
+    if (!seen.has(doc.id)) {
+      seen.add(doc.id)
+      merged.push(doc)
+    }
+  }
+  return merged
+}
+
 // 将检索结果格式化为 Prompt 上下文
 export function formatContext(docs: RetrievedDoc[]): string {
   if (docs.length === 0) return ''

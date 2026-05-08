@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getEmbedding } from '@/lib/embedding'
 import { upsertDocument, newsExistsForDate, pruneOldNewsByTag } from '@/lib/rag'
+import { createClient as createServerSupabaseClient } from '@/lib/supabase/server'
 
 // 每个 tag 最多保留最近多少条 news（防无限膨胀）
 const KEEP_PER_TAG = 4
@@ -18,6 +19,22 @@ const SEARCH_TOPICS = [
   { query: 'ISSB IFRS sustainability standards update', region: '全球', tag: 'ISSB' },
   { query: 'US AI export control China restriction', region: '美国', tag: '出口管制' },
 ]
+
+async function isAuthorizedRequest(req: NextRequest): Promise<boolean> {
+  const authHeader = req.headers.get('authorization')
+  const cronSecret = process.env.CRON_SECRET
+
+  if (!cronSecret) return true
+  if (authHeader === `Bearer ${cronSecret}`) return true
+
+  try {
+    const supabase = await createServerSupabaseClient()
+    const { data } = await supabase.auth.getUser()
+    return Boolean(data.user)
+  } catch {
+    return false
+  }
+}
 
 // 调用 Tavily 搜索 API
 async function searchWeb(query: string): Promise<{ title: string; content: string; url: string }[]> {
@@ -80,9 +97,7 @@ async function summarizeResults(
 
 export async function POST(req: NextRequest) {
   // 验证内部调用密钥（防止未授权触发）
-  const authHeader = req.headers.get('authorization')
-  const cronSecret = process.env.CRON_SECRET
-  if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
+  if (!(await isAuthorizedRequest(req))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 

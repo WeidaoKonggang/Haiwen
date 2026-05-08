@@ -1,11 +1,14 @@
 {
   "nav": {
     "home": "首页",
-    "chat": "AI问答",
+    "chat": "AI 问答",
     "cases": "案例库",
     "policyDb": "政策数据库",
     "expertHall": "专家大厅",
     "trends": "最新动态",
+    "validation": "用户验证",
+    "about": "关于我们",
+    "inbox": "收件箱",
     "dashboard": "控制台",
     "login": "登录",
     "register": "注册",

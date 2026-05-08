@@ -17,6 +17,20 @@ interface Facets {
 }
 
 // Parse Agent-written content into { summary, sources }
+function cleanSummaryText(text: string): string {
+  return text
+    .split('\n')
+    .map((line) =>
+      line
+        .replace(/^#{1,6}\s*/, '')
+        .replace(/^\s*[-*]\s+/, '')
+        .replace(/\*\*/g, '')
+        .trim()
+    )
+    .filter((line) => line && line !== '---')
+    .join('\n')
+}
+
 function parseNewsContent(content: string): { summary: string; sources: string[] } {
   const lines = content.split('\n')
   const summaryLines: string[] = []
@@ -40,7 +54,7 @@ function parseNewsContent(content: string): { summary: string; sources: string[]
   }
 
   return {
-    summary: summaryLines.join('\n').trim() || content,
+    summary: cleanSummaryText(summaryLines.join('\n').trim() || content),
     sources,
   }
 }
@@ -113,6 +127,9 @@ export default function TrendsPage({ params }: { params: Promise<{ locale: strin
     try {
       const res = await fetch('/api/agent/weekly-update', { method: 'POST' })
       const data = await res.json()
+      if (res.status === 401) {
+        throw new Error(isZh ? '请先登录后再手动刷新' : 'Please log in before refreshing manually')
+      }
       if (!res.ok) throw new Error(data.error ?? 'Failed')
       alert(
         isZh

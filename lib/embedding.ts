@@ -2,6 +2,7 @@
  * 多 provider 的 Embedding 封装
  *
  * 通过环境变量 EMBEDDING_PROVIDER 选择：
+ *   - local        （本地确定性向量，仅用于课程演示 / 无外部 embedding key 场景）
  *   - zhipu        （智谱 GLM，推荐：embedding-2 / 1024 维；embedding-3 / 2048 维）
  *   - openai       （text-embedding-3-small / 1536 维）
  *   - siliconflow  （国内免费，BAAI/bge-m3 / 1024 维）
@@ -11,7 +12,7 @@
  * 维度与 provider 输出维度保持一致（参见 supabase/migrations/002_set_embedding_dim.sql）。
  */
 
-type ProviderName = 'zhipu' | 'openai' | 'siliconflow' | 'deepseek'
+type ProviderName = 'local' | 'zhipu' | 'openai' | 'siliconflow' | 'deepseek'
 
 interface ProviderConfig {
   url: string
@@ -20,8 +21,39 @@ interface ProviderConfig {
   dimension: number
 }
 
+const LOCAL_EMBEDDING_DIMENSION = 1024
+
+function getLocalEmbedding(text: string): number[] {
+  const vector = new Array(LOCAL_EMBEDDING_DIMENSION).fill(0)
+  const normalized = text.toLowerCase()
+  const tokens =
+    normalized.match(/[\p{Script=Han}]|[a-z0-9]+/gu) ?? []
+
+  for (const token of tokens) {
+    let hash = 2166136261
+    for (let i = 0; i < token.length; i++) {
+      hash ^= token.charCodeAt(i)
+      hash = Math.imul(hash, 16777619)
+    }
+    const idx = Math.abs(hash) % LOCAL_EMBEDDING_DIMENSION
+    vector[idx] += 1
+  }
+
+  const norm = Math.sqrt(vector.reduce((sum, value) => sum + value * value, 0))
+  return norm > 0 ? vector.map((value) => value / norm) : vector
+}
+
 function resolveProvider(): ProviderConfig {
   const provider = (process.env.EMBEDDING_PROVIDER ?? 'zhipu').toLowerCase() as ProviderName
+
+  if (provider === 'local') {
+    return {
+      url: 'local://hashing-vectorizer',
+      apiKey: '',
+      model: 'local-hashing-1024',
+      dimension: LOCAL_EMBEDDING_DIMENSION,
+    }
+  }
 
   if (provider === 'zhipu') {
     const apiKey = process.env.ZHIPU_API_KEY
@@ -82,6 +114,10 @@ export function getEmbeddingDimension(): number {
 
 export async function getEmbedding(text: string): Promise<number[]> {
   const cfg = resolveProvider()
+
+  if (cfg.url.startsWith('local://')) {
+    return getLocalEmbedding(text)
+  }
 
   // 智谱 embedding-3 / OpenAI text-embedding-3-* 支持通过 dimensions 自定义输出维度
   const body: Record<string, unknown> = {

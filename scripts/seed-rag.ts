@@ -32,6 +32,16 @@ const supabase = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 )
 
+async function resetSeedData() {
+  const seedTypes = ['policy', 'esg', 'case', 'risk', 'expert']
+  const { error } = await supabase
+    .from('documents')
+    .delete()
+    .in('metadata->>type', seedTypes)
+
+  if (error) throw error
+}
+
 async function upsert(content: string, metadata: Record<string, string>) {
   console.log(`  向量化: ${content.slice(0, 50)}...`)
   const embedding = await getEmbedding(content)
@@ -47,6 +57,9 @@ async function upsert(content: string, metadata: Record<string, string>) {
 async function main() {
   console.log('=== 海问 HQ RAG 数据写入开始 ===')
   console.log(`Provider: ${process.env.EMBEDDING_PROVIDER ?? 'openai'} | 期望向量维度: ${getEmbeddingDimension()}\n`)
+
+  console.log('清理旧的基础知识库条目（保留 news 最新动态）')
+  await resetSeedData()
 
   // 1. 政策库
   console.log(`[1/5] 写入政策库 (${policyData.length} 条)`)

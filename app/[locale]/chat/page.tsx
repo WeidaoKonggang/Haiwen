@@ -1,61 +1,56 @@
-import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
 import ChatInterface from '@/components/ChatInterface'
 
-export default async function ChatPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function ChatPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ locale: string }>
+  searchParams: Promise<{ q?: string }>
+}) {
   const { locale } = await params
-  const t = await getTranslations('chat')
+  const { q } = await searchParams
+  const isZh = locale === 'zh'
 
-  // 检查登录状态（Supabase 未配置时降级为未登录）
-  let user = null
+  // 尽力获取用户状态（未登录也允许使用，游客可体验 AI 咨询）
+  let user: { email?: string | null } | null = null
   try {
     const { createClient } = await import('@/lib/supabase/server')
     const supabase = await createClient()
     const { data } = await supabase.auth.getUser()
     user = data.user
   } catch {
-    // Supabase 未配置
-  }
-
-  // 未登录时显示引导界面
-  if (!user) {
-    return (
-      <div className="min-h-[calc(100vh-64px)] flex items-center justify-center bg-gray-50 px-4">
-        <div className="text-center max-w-md">
-          <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-            <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-            </svg>
-          </div>
-          <h2 className="text-xl font-bold text-gray-900 mb-2">{t('loginRequired')}</h2>
-          <p className="text-gray-500 text-sm mb-6">
-            {locale === 'zh'
-              ? '登录后即可使用海问HQ的AI出海与ESG专业咨询功能'
-              : "Log in to access HQ's professional AI globalization and ESG consulting"}
-          </p>
-          <div className="flex gap-3 justify-center">
-            <Link
-              href={`/${locale}/login`}
-              className="bg-blue-600 text-white px-6 py-2.5 rounded-lg font-medium hover:bg-blue-700 text-sm"
-            >
-              {t('loginBtn')}
-            </Link>
-            <Link
-              href={`/${locale}/register`}
-              className="border border-gray-200 text-gray-700 px-6 py-2.5 rounded-lg font-medium hover:bg-gray-50 text-sm"
-            >
-              {locale === 'zh' ? '免费注册' : 'Sign Up Free'}
-            </Link>
-          </div>
-        </div>
-      </div>
-    )
+    // Supabase 未配置，按游客模式继续
   }
 
   return (
-    <div style={{ height: 'calc(100vh - 64px)' }}>
-      <ChatInterface locale={locale} />
+    <div className="flex flex-col" style={{ height: 'calc(100vh - 64px)' }}>
+      {/* 游客提示条：鼓励但不阻塞 */}
+      {!user && (
+        <div className="border-b border-blue-100 bg-blue-50/60 text-blue-900 px-4 py-2 text-xs flex items-center justify-center gap-3 flex-wrap">
+          <span className="inline-flex items-center gap-1.5">
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            {isZh
+              ? '您正在以游客身份体验 · 回答基于平台知识库并带引用'
+              : 'You are using HQ as a guest · Answers are grounded in our knowledge base with citations'}
+          </span>
+          <span className="hidden sm:inline text-blue-300">|</span>
+          <div className="flex items-center gap-2">
+            <Link
+              href={`/${locale}/register`}
+              className="underline hover:no-underline font-medium"
+            >
+              {isZh ? '免费注册保存对话历史' : 'Register to save your conversations'}
+            </Link>
+          </div>
+        </div>
+      )}
+
+      <div className="flex-1 min-h-0">
+        <ChatInterface locale={locale} initialQuestion={q ?? undefined} isGuest={!user} />
+      </div>
     </div>
   )
 }

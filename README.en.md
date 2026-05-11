@@ -66,6 +66,29 @@ HQ (海问) is an all-in-one compliance and ESG advisory platform for Chinese AI
 
 ---
 
+## Mobile Companion App
+
+This repository now includes `mobile-app/`, an Expo React Native companion app for HQ-Haiwen. It is not a replacement for the main website. Instead, it provides a lightweight mobile entry point for commuting, quick scanning, short AI questions, audio briefings, and saved-item handoff back to the website.
+
+Core mobile flows:
+
+- **Today’s Brief**: concise ESG / globalisation briefing cards
+- **Quick Ask**: short AI consultation on mobile
+- **Saved**: save briefings or answers and continue deep reading on the website
+- **Audio briefing**: XFYun TTS-powered mobile listening flow
+
+Run the mobile app:
+
+```bash
+cd mobile-app
+npm install
+npx expo start --tunnel --clear
+```
+
+Required Supabase, DeepSeek, Juhe News and XFYun TTS values are documented in `mobile-app/.env.example`. Real `.env` files should never be committed to GitHub.
+
+---
+
 ## Quick Start
 
 ### 1. Clone

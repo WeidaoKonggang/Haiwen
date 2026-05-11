@@ -66,6 +66,27 @@
 
 ---
 
+## Mobile Companion App（轻量移动端）
+
+本仓库新增 `mobile-app/`，作为 HQ-Haiwen 主网站的 Expo React Native companion app。它不是网站的替代品，而是面向通勤、会议间隙等移动场景的轻量入口，提供：
+
+- **Today’s Brief**：快速查看 ESG / globalisation 简报
+- **Quick Ask**：进行短问题 AI 咨询
+- **Saved**：保存简报或问答结果，并跳转回网站继续深度阅读
+- **Audio briefing**：通过 XFYun TTS 支持移动端语音播报
+
+运行移动端：
+
+```bash
+cd mobile-app
+npm install
+npx expo start --tunnel --clear
+```
+
+移动端所需的 Supabase、DeepSeek、Juhe News 和 XFYun TTS 配置写在 `mobile-app/.env.example` 中。真实 `.env` 不应提交到 GitHub。
+
+---
+
 ## 快速开始
 
 ### 1. 克隆项目
